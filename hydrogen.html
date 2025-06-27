@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPV Overview</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/jturbo-logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/lay.css" rel="stylesheet">
+
+  <style>
+    .spv {
+      font-family: 'Arial', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    .spv-header-banner-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .svp-header-banner {
+      position: relative;
+      width: 100%;
+      height: 600px; /* Fixed height matches your current setup */
+      display: block;
+    }
+
+    .header-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .svp-banner-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.5) 100%
+      );
+      
+    }
+
+    .svp-banner-content h1{
+      color: white;
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .step-container {
+      counter-reset: step-counter;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .step-row {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .step-box {
+      position: relative;
+      background: white;
+      border-radius: 8px;
+      padding: 30px 100px 30px 80px; /* <- Increased right padding */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid darkblue;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-left: 30px;
+      overflow: visible;
+    }
+
+
+    .step-box:before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #233250;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .step-box:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+    }
+
+    .step-title {
+      color:#233250;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-icon {
+      position: absolute;
+      top: 50%;
+      font-size: 40px;
+      right: 30px;
+  
+      transform: translateY(-50%);
+      font-size: 48px;
+      color: #233250; /* darkblue with transparency */
+    pointer-events: none; /* So it's not clickable */
+}
+
+
+    
+    .step-text {
+      color: #555;
+      line-height: 1.6;
+      padding-right: 60px;
+      word-wrap: break-word;
+    }
+    .heading-class{
+        color:black;
+    }
+
+    @media (max-width: 768px) {
+      .svp-header-banner {
+        height: auto; /* Allow height to be determined by content */
+        position: relative;
+      }
+
+      .svp-banner-content{
+        padding-top: 120px;
+      }
+
+      .svp-banner-text {
+        padding-top: 120px;
+      }
+
+      .svp-banner-text h1 {
+        color: white;
+        margin-bottom: 15px;
+      }
+      
+      .header-image {
+        height: 400px; /* Fixed height for mobile */
+        width: 100%;
+        object-fit: cover;
+      }
+      
+      
+      .step-box {
+        margin-left: 15px;
+        padding: 20px 60px 20px 60px;
+      }
+      .step-box:before {
+        left: -15px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      .step-icon {
+        right: 15px;
+        font-size: 30px;
+      }
+     .step-text {
+        padding-right: 40px;
+    }
+}
+    
+    @media (max-width: 576px) {
+      .step-box {
+        padding: 15px 40px 15px 50px;
+      }
+      .step-title {
+        font-size: 18px;
+      }
+      .step-text {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 480px) {
+  .header-image {
+    height: 300px; /* Even smaller height for very small screens */
+  }
+  .svp-banner-text {
+    padding-top: 140px; /* Pushes content further down on very small screens */
+  }
+}
+  </style>
+</head>
+<body class="spv">
+
+  
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/jturbo-logo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index .html" class="active">Home</a></li>
+          <li><a href="index .html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+         
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">Enquiry</a>
+
+    </div>
+  </header>
+  
+  <!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="form-container">
+            </div>
+          </div>
+          <div class="form-section">
+            <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="form-header">
+              <h1>ENQUIRE</h1>
+              <p>Get in touch with our team</p>
+            </div>
+            
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name*</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="title" class="form-label">Job Title*</label>
+                  <input type="text" class="form-control" id="title" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email*</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone*</label>
+                  <input type="tel" class="form-control" id="phone" required>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="company" class="form-label">Organization*</label>
+                <input type="text" class="form-control" id="company" required>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Interest Area*</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="pilot">
+                      <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="licensing">
+                      <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="equipment">
+                      <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="investment">
+                      <label class="form-check-label" for="investment">Investment Opportunity</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="scale" class="form-label">Project Scale</label>
+                  <select class="form-select" id="scale">
+                    <option value="" selected disabled>Select scale</option>
+                    <option value="small">Small-Scale (0.1-1 MTPA)</option>
+                    <option value="mid">Mid-Scale (1-5 MTPA)</option>
+                    <option value="large">Large-Scale (5+ MTPA)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="region" class="form-label">Target Region</label>
+                  <select class="form-select" id="region">
+                    <option value="" selected disabled>Select region</option>
+                    <option value="asia">Asia</option>
+                    <option value="middle-east">Middle East</option>
+                    <option value="north-america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="africa">Africa</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <label for="notes" class="form-label">Additional Requirements</label>
+                <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-submit">
+                Request Proposal <i class="fas fa-paper-plane ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Replace your current header-banner section with this -->
+<div class="svp-header-banner-container">
+  <div class="svp-header-banner">
+    <img src="assets/img/otherimages/svp.webp" alt="SPV Overview" class="header-image">
+    <div class="svp-banner-content">
+      <h1>SPV Overview & Structure</h1>
+      <p>Strategic investment vehicle for clean energy projects</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Steps Section -->
+  <div class="step-container">
+    <div class="step-row">
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="200">
+        <i class="bi bi-diagram-3 step-icon"></i>
+        <h3 class="step-title"> Strategic SPV Formation</h3>
+        <p class="step-text">
+          JTurbo plans to establish a SPV, "JTurbo Technologies Pvt. Ltd" ("JTT" or the "Company"), in India to finance and execute the projects.
+        </p>
+      </div>
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="200">
+        <h3 class="step-title"><i class="bi bi-graph-up-arrow step-icon"></i> Investment Opportunity
+        </h3>
+        <p class="step-text">
+          JTT will be based in Chennai, offering a structured investment avenue for Jturbo and new investors.
+        </p>
+      </div>
+     
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="300">
+        <h3 class="step-title"><i class="bi bi-people-fill step-icon"></i>Talent Acquisition</h3>
+        <p class="step-text">
+          A highly skilled workforce will be recruited from top-tier Indian institutions to drive innovation and efficiency.</p>
+      </div>
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="300">
+        <h3 class="step-title"><i class="bi bi-tools step-icon"></i> Comprehensive Service Offering</h3>
+        <p class="step-text">
+          JTurbo will channel all its services through the JTT in India, ensuring operational excellence.
+        </p>
+      </div>
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="400">
+        <h3 class="step-title"><i class="bi bi-globe step-icon"></i> Global Market Reach</h3>
+        <p class="step-text">
+          The Company will cater to Indian markets, expanding growth opportunities.
+        </p>
+      </div>
+      <div class="step-box"  data-aos="fade-up" data-aos-delay="400">
+        <h3 class="step-title"><i class="bi bi-bar-chart-line step-icon"></i> Attractive Investment Destination</h3>
+        <p class="step-text">
+          JTurbo presents a compelling opportunity for investors looking to capitalize on Indian dynamic market.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Hero Section with Background Image -->
+  <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
+    <!-- Blurred background -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
+      background-size: cover;
+      filter: blur(10px);
+      pointer-events: none;
+    "></div>
+  
+    <!-- Foreground content -->
+    <div class="container position-relative" style="padding-top:20px;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
+          <p class="lead mb-4">LNG/BIO-LNG adoption improves with modular systems and refrigerant flexibility, enhancing efficiency and scalability while cutting emissions</p>
+          <a href="#" class="btn btn-light btn-lg px-4" style="padding-top:10px;">View more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+    
+  
+  <!-- Discover Section with Contact -->
+  <section class="discover-section py-2" style="background: #f5f5f5;">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Column: Text -->
+          <div class="col-md-8">
+            <h2 class="fw-bold">
+              Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
+              with Expert Guidance
+            </h2>
+          </div>
+    
+          <!-- Right Column: Address -->
+          <div class="col-md-4 text-md-end mt-4 mt-md-0">
+            <p class="mb-1 fw-medium">12345, Texas, United States,</p>
+            <p class="fw-semibold text-dark">(+123) 123-1234</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Main Footer Nav -->
+    <footer class="footer-nav border-top py-3">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <!-- Left Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="geographic.html" class="nav-link px-2 text-muted">Geographic presence</a></li>
+          <li class="nav-item"><a href="petent.html" class="nav-link px-2 text-muted">Petent</a></li>
+          <li class="nav-item"><a href="technology.html" class="nav-link px-2 text-muted">Technology</a></li>
+        </ul>
+    
+        <!-- Center Branding -->
+        <div class="text-center footer-logo"><img src="assets/img/jturbo-logo.png" alt=""></div>
+    
+        <!-- Right Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="intellectual.html" class="nav-link px-2 text-muted">Intellectual property</a></li>
+          <li class="nav-item"><a href="risk.html" class="nav-link px-2 text-muted">Risk Management</a></li>
+          <li class="nav-item"><a href="businees-model.html" class="nav-link px-2 text-muted">Business Model</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <!-- Legal Footer -->
+    <div class="footer-bottom bg-light py-2 border-top">
+      <div class="container d-flex flex-wrap justify-content-between">
+        <div class="text-muted small">© 2025 Infercon. All rights reserved.</div>
+        <div class="text-muted small">
+          <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a> |
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">KnightOne</h3>
+      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">KnightOne</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+        
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

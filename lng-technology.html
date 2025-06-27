@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JTurbo | LNG Liquefaction Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #006400;
+      --primary-light: #e6f2e6;
+      --accent: #007f33;
+      --text: #1a1a1a;
+      --text-light: #4d4d4d;
+      --light: #ffffff;
+      --bg: #f7fdf7;
+      --shadow: 0 4px 6px rgba(0, 100, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero-banner {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-banner img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      transform: scale(1.1);
+      transition: transform 10s ease-out;
+    }
+
+    .hero-banner:hover img {
+      transform: scale(1);
+    }
+
+    /* Gradient Overlay with Light Effect */
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+      z-index: 2;
+    }
+
+    /* Animated Light Streaks */
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-25deg);
+      z-index: 3;
+      animation: shine 6s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      max-width: 900px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s ease-out forwards 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(to right, #fff, #e0e0e0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    .scroll-down {
+      display: inline-block;
+      margin-top: 2rem;
+      color: white;
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+
+    .content-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .content-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .content-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-top: 4px solid var(--primary);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 100, 0, 0.15);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 1rem;
+      color: var(--primary);
+    }
+
+    ul.feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 2rem 0;
+    }
+
+    ul.feature-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    ul.feature-list li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .highlight-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 3rem 0;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .highlight-image:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: var(--transition);
+      height: 250px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 100, 0, 0.8);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+   
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--primary-light);
+      border-radius: 10px;
+      margin: 4rem 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-15px);
+      }
+      60% {
+        transform: translateY(-7px);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .banner h1 {
+        font-size: 2.2rem;
+      }
+      
+      .banner p {
+        font-size: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .banner {
+        padding: 4rem 1.5rem 3rem;
+      }
+      
+      .banner h1 {
+        font-size: 1.8rem;
+      }
+      
+      .content-section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+   <section class="hero-banner">
+    <div class="particles" id="particles"></div>
+    <img src="assets/img/otherimages/leading-edge.png" alt="JTurbo Hydrogen Liquefaction Technology">
+    <div class="hero-content">
+      <h1>JTurbo Hydrogen Liquefaction</h1>
+      <p>Revolutionary technology delivering 50% greater efficiency through advanced thermodynamic cycles and precision engineering</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Highly Efficient Design, Proven Elements</h2>
+    <p>Our LNG liquefaction technology combines decades of engineering expertise with cutting-edge innovation to deliver superior performance and reliability.</p>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>Turbo-Expander Efficiency</h3>
+        <p>Proven Reverse-Brayton thermodynamic refrigeration cycle with twin turbo-expanders for maximum efficiency.</p>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-exchange-alt"></i>
+        <h3>Heat Exchange Technology</h3>
+        <p>Demonstrated plate-fin heat exchanger technology for efficient cooling and temperature control.</p>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-compress-arrows-alt"></i>
+        <h3>Compressor Reliability</h3>
+        <p>Well-established refrigerant compressor technology with proven track record in industrial applications.</p>
+      </div>
+    </div>
+    
+    <img class="highlight-image" src="assets/img/process-diagram.png" alt="LNG Liquefaction Process Diagram" />
+  </section>
+
+  <section class="content-section">
+    <h2>Key Technology Advantages</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Environmental Benefits</h3>
+        <ul class="feature-list">
+          <li>Reduced energy consumption</li>
+          <li>Lower carbon footprint</li>
+          <li>Minimal methane slip</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-cogs"></i>
+        <h3>Operational Excellence</h3>
+        <ul class="feature-list">
+          <li>Modular design for easy installation</li>
+          <li>Reduced maintenance requirements</li>
+          <li>Automated control systems</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Economic Advantages</h3>
+        <ul class="feature-list">
+          <li>Lower capital costs</li>
+          <li>Reduced operating expenses</li>
+          <li>Faster ROI compared to conventional systems</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="content-section">
+    <h2>Technology in Action</h2>
+    <p>See our LNG liquefaction technology deployed in real-world applications across the globe.</p>
+    
+    <div class="image-gallery">
+      <div class="gallery-item">
+        <img src="assets/img/plant-1.jpg" alt="LNG Plant Installation">
+        <div class="gallery-caption">Modular LNG Plant in Texas</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/plant-2.jpg" alt="Turbo-Expander Closeup">
+        <div class="gallery-caption">Turbo-Expander Assembly</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/plant-3.jpg" alt="Control Room">
+        <div class="gallery-caption">Advanced Control Systems</div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <script>
+    // Animation for scroll-triggered content
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.content-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+      
+      // Smooth scroll for the down arrow
+      document.querySelector('.scroll-down').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollBy({
+          top: window.innerHeight - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

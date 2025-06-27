@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en" class="index-page">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/lay.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style class="lng-summary-style">
+        :root {
+            --lng-summary-primary-color: #2e7d32;
+            --lng-summary-secondary-color: #4caf50;
+            --lng-summary-accent-color: #8bc34a;
+            --lng-summary-dark-green: #1b5e20;
+            --lng-summary-light-green: #c8e6c9;
+        }
+        
+        .lng-summary-body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .lng-summary-hero-section {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+
+        
+        .lng-summary-hero-content {
+            text-align: center;
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        .lng-summary-section-title {
+            color: var(--lng-summary-dark-green);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            text-align: left;
+            
+        }
+        
+        .lng-summary-feature-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+            background-color: white;
+            opacity: 0;
+            transform: translateY(30px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lng-summary-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.1), rgba(76, 175, 80, 0.2));
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lng-summary-feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .lng-summary-feature-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lng-summary-feature-icon {
+            font-size: 2.5rem;
+            color: var(--lng-summary-primary-color);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .lng-summary-feature-card:hover .lng-summary-feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .lng-summary-comparison-table {
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .lng-summary-comparison-table thead {
+            background-color: var(--lng-summary-dark-green);
+            color: white;
+        }
+        
+        .lng-summary-comparison-table tbody tr {
+            transition: all 0.3s ease;
+        }
+        
+        .lng-summary-comparison-table tbody tr:hover {
+            background-color: var(--lng-summary-light-green);
+            transform: scale(1.01);
+        }
+        
+        .lng-summary-highlight-box {
+            background-color: var(--lng-summary-light-green);
+            border-left: 4px solid var(--lng-summary-accent-color);
+            padding: 2rem;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lng-summary-highlight-box:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lng-summary-highlight-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.1), rgba(76, 175, 80, 0.2));
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lng-summary-highlight-box:hover::after {
+            opacity: 1;
+        }
+        
+        .lng-summary-footer {
+            background-color: var(--lng-summary-dark-green);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .lng-summary-tech-badge {
+            background-color: var(--lng-summary-primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .lng-summary-feature-card:hover .lng-summary-tech-badge {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lng-summary-btn-primary {
+            background-color: var(--lng-summary-primary-color);
+            border-color: var(--lng-summary-primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .lng-summary-btn-primary:hover {
+            background-color: var(--lng-summary-dark-green);
+            border-color: var(--lng-summary-dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lng-summary-btn-outline-light:hover {
+            color: var(--lng-summary-dark-green);
+        }
+        
+        .lng-summary-card {
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+        }
+        
+        .lng-summary-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lng-summary-bg-light {
+            background-color: #f5f9f5 !important;
+        }
+        
+        .lng-summary-section {
+            padding: 100px 0;
+            opacity: 0;
+        }
+        
+        .lng-summary-fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        /* Rotating animation */
+        .lng-summary-rotating {
+            animation: lng-summary-rotating 10s linear infinite;
+        }
+        
+        @keyframes lng-summary-rotating {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Bouncing animation */
+        .lng-summary-bouncing {
+            animation: lng-summary-bouncing 2s ease infinite;
+        }
+        
+        @keyframes lng-summary-bouncing {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* Interactive animation classes */
+        .lng-summary-scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .lng-summary-scale-on-hover:hover {
+            transform: scale(1.05);
+        }
+        
+        .lng-summary-tilt-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .lng-summary-tilt-on-hover:hover {
+            transform: rotate(2deg);
+        }
+        
+        /* Hero CTA button animation */
+        .lng-summary-cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lng-summary-cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+        
+        .lng-summary-cta-button:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+    </style>
+</head>
+<body class="lng-summary-body">
+ <!-- Navigation from file.html -->
+  <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+       <img src="assets/img/jturbo-logo.png" style="height: 100px; width: 100px;" alt="JTurbo Logo">
+
+      </a>
+      
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="hamburger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</button>
+      
+      <div class="collapse navbar-collapse" id="navbarContent">
+       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+          <!-- About Dropdown -->
+          <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <div class="dropdown-container">
+                <div class="sidebar-menu">
+                  <div class="menu-header">About JTurbo</div>
+                  
+                  <a href="/jturbo/highlight.html" class="menu-item"><i class="fas fa-star"></i> Highlights (Introduction) <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a>
+                  <a href="/jturbo/leading-edge.html" class="menu-item"><i class="fas fa-atom"></i> JTurbo Hydrogen Liquefaction Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a>
+                  
+                  <div class="menu-header" style="margin-top: 2rem;">Company History  </div>
+                  <a href="/jturbo/profile.html" class="menu-item"><i class="fas fa-user-tie"></i> Founder Profile<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <!-- <a href="/efficiency-technology" class="menu-item"><i class="fas fa-tachometer-alt"></i> Efficiency Driven Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a> -->
+                  <a href="/jturbo/company-overview.html" class="menu-item"><i class="fas fa-building"></i> Company Overview <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                
+                <!-- Content area (hidden on mobile) -->
+                <div class="content-area">
+                  <div>
+                    <div class="content-header">
+                      <h2 class="content-title">About JTurbo</h2>
+                      <!-- <div class="content-arrow"><i class="fas fa-arrow-right"></i></div> -->
+                    </div>
+                    <p class="content-text">
+                      JTurbo is revolutionizing hydrogen liquefaction technology with our patented solutions. 
+                      Founded by industry veteran Jacob, our company combines 
+                    </p>
+                  </div>
+                  <div class="content-image-container">
+                    <img class="content-image" src="assets/img/otherimages/about.jpg" alt="JTurbo Hydrogen Plant">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Patents Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="patentsDropdown" role="button" data-bs-toggle="dropdown">
+              Patents
+            </a>
+            <div class="dropdown-menu" aria-labelledby="patentsDropdown">
+              <div class="dropdown-container">
+                <div class="sidebar-menu">
+                  <div class="menu-header">Our Patented Technologies</div>
+                  <a href="/jturbo/patent-leading.html" class="menu-item"><i class="fas fa-certificate"></i> Hydrogen Liquefaction Leading Edge <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                
+                  
+                </div>
+                
+                <div class="content-area">
+                  <div>
+                    <div class="content-header">
+                      <h2 class="content-title">Patented Technologies</h2>
+                      <!-- <div class="content-arrow"><i class="fas fa-arrow-right"></i></div> -->
+                    </div>
+                    <p class="content-text">
+                      Our portfolio of patented technologies represents breakthroughs in hydrogen and LNG liquefaction. 
+                      These innovations deliver unmatched efficiency and reliability, setting new industry standards.
+                    </p>
+                    
+                   
+                  </div>
+                  <div class="content-image-container">
+                    <img class="content-image" src="assets/img/otherimages/patent.webp" alt="Patented Technology">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Technology Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="techDropdown" role="button" data-bs-toggle="dropdown">
+              Technology
+            </a>
+            <div class="dropdown-menu" aria-labelledby="techDropdown">
+              <div class="dropdown-container">
+                <div class="sidebar-menu">
+                  <div class="menu-header">LH2 Technology</div>
+                  <a href="/jturbo/hydrogen-summary.html" class="menu-item"><i class="fas fa-snowflake"></i> Hydrogen Liquefaction Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/jturbo/twin.html" class="menu-item"><i class="fas fa-compress-arrows-alt"></i> advantage of twin turbo expand cycle <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/jturbo/hydrogen-liquifecation.html" class="menu-item"><i class="fas fa-balance-scale"></i> Technology Comparison <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  
+                  <div class="menu-header" style="margin-top: 2rem;">LNG Technology</div>
+                  <a href="/jturbo/lng.html" class="menu-item"><i class="fas fa-fire"></i> LNG Liquefaction Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/jturbo/lng-summary.html" class="menu-item"><i class="fas fa-chart-bar"></i> LNG Refrigeration Summary <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                
+                <div class="content-area">
+                  <div>
+                    <div class="content-header">
+                      <h2 class="content-title">Core Technologies</h2>
+                      <!-- <div class="content-arrow"><i class="fas fa-arrow-right"></i></div> -->
+                    </div>
+                    <p class="content-text">
+                      JTurbo's proprietary technologies for hydrogen and LNG liquefaction deliver industry-leading 
+                      efficiency and reliability. Our systems are designed for maximum output with minimal energy input.
+                    </p>
+                    
+                    
+                  </div>
+                  <div class="content-image-container">
+                    <img class="content-image" src="assets/img/otherimages/technology.webp" alt="Core Technology">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Products & Solutions Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
+              Products & Solutions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="productsDropdown">
+              <div class="dropdown-container">
+                <div class="sidebar-menu accordion" id="productsAccordion">
+  <div class="accordion-item bg-transparent border-0">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-transparent text-white custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#hydrogenMenu">
+  Hydrogen Solutions
+</button>
+
+    </h2>
+    <div id="hydrogenMenu" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+      <div class="accordion-body p-0">
+        <a href="/jturbo/power-cold.html" class="menu-item"><i class="fas fa-battery-full"></i> Power and Cold Energy Buffer</a>
+        <!-- <a href="/lh2-15tpd" class="menu-item"><i class="fas fa-tint"></i> LH2 15TPD</a>
+        <a href="/lh2-30tpd" class="menu-item"><i class="fas fa-tint"></i> LH2 30TPD</a> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="accordion-item bg-transparent border-0">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-transparent text-white custom-accordion" type="button" data-bs-toggle="collapse"  data-bs-target="#lngMenu">
+        LNG Solutions
+      </button>
+    </h2>
+    <div id="lngMenu" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+      <div class="accordion-body p-0">
+        <a href="/lng-small" class="menu-item"><i class="fas fa-box"></i> LNG Small Skid</a>
+        <a href="/lng-medium" class="menu-item"><i class="fas fa-boxes"></i> LNG Medium Skid</a>
+        <a href="/lng-large" class="menu-item"><i class="fas fa-pallet"></i> LNG Large Skid</a>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="accordion-item bg-transparent border-0">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-transparent text-white custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#specialMenu">
+        Specialized Solutions
+      </button>
+    </h2>
+    <div id="specialMenu" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
+      <div class="accordion-body p-0">
+        <a href="/jturbo/power-island.html" class="menu-item"><i class="fas fa-industry"></i> Power Island</a>
+        <a href="/jturbo/data-center.html" class="menu-item"><i class="fas fa-database"></i> Data Center Solutions</a>
+        <a href="/jturbo/data-nitrogen.html" class="menu-item"><i class="fas fa-fan"></i> Nitrogen Cooling</a>
+        <a href="/jturbo/gn-turbo.html" class="menu-item"><i class="fas fa-cog"></i> GN2 Turbo</a>
+        <!-- <a href="/comprehensive" class="menu-item"><i class="fas fa-cubes"></i> Comprehensive Solutions</a>
+        <a href="/renewables" class="menu-item"><i class="fas fa-leaf"></i> Industrial Optimization</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+                
+                <div class="content-area">
+                  <div>
+                    <div class="content-header">
+                      <h2 class="content-title">Products & Solutions</h2>
+                      <!-- <div class="content-arrow"><i class="fas fa-arrow-right"></i></div> -->
+                    </div>
+                    <p class="content-text">
+                      From small-scale LH2 plants to large LNG facilities, JTurbo offers a complete range of 
+                      solutions tailored to your specific needs. Our systems integrate seamlessly with renewable 
+                      energy sources for sustainable operation.
+                    </p>
+                    
+                    
+                  </div>
+                  <div class="content-image-container">
+                    <img class="content-image" src="assets/img/otherimages/product.png" alt="Products and Solutions">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Case Studies Dropdown
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="casesDropdown" role="button" data-bs-toggle="dropdown">
+              Case Studies
+            </a>
+            <div class="dropdown-menu" aria-labelledby="casesDropdown">
+              <div class="dropdown-container">
+                <div class="sidebar-menu">
+                  <div class="menu-header">Client Success Stories</div>
+                  <a href="/plug-power-case" class="menu-item"><i class="fas fa-plug"></i> Plug Power<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/data-center-case" class="menu-item"><i class="fas fa-server"></i> Data Center Case Study<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  
+                  <div class="menu-header" style="margin-top: 2rem;">LNG Implementations</div>
+                  <a href="/lng-small-case" class="menu-item"><i class="fas fa-box"></i> LNG Small Skid<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/lng-medium-case" class="menu-item"><i class="fas fa-boxes"></i> LNG Medium Skid<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/lng-large-case" class="menu-item"><i class="fas fa-pallet"></i> LNG Large Skid<span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                </div>
+                
+                <div class="content-area">
+                  <div>
+                    <div class="content-header">
+                      <h2 class="content-title">Proven Success</h2>
+                      <div class="content-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <p class="content-text">
+                      Our technologies have been successfully implemented across industries worldwide. 
+                      These case studies demonstrate the real-world performance and benefits of JTurbo solutions.
+                    </p>
+                    
+                   
+                  </div>
+                  <div class="content-image-container">
+                    <img class="content-image" src="assets/img/otherimages/casestudies.png" alt="Case Studies">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li> -->
+          
+          <!-- Contact Link -->
+          <li class="nav-item">
+            <a class="nav-link" href="/jturbo/contact.html">
+              Contact
+            </a>
+          </li>
+        </ul>        <!-- Enquiry Button - Now properly placed in the navbar -->
+        <div class="d-flex">
+          <a class="btn btn-success cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+            Enquiry
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="form-container">
+            </div>
+          </div>
+          <div class="form-section">
+            <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="form-header">
+              <h1>ENQUIRE</h1>
+              <p>Get in touch with our team</p>
+            </div>
+            
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name*</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="title" class="form-label">Job Title*</label>
+                  <input type="text" class="form-control" id="title" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email*</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone*</label>
+                  <input type="tel" class="form-control" id="phone" required>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="company" class="form-label">Organization*</label>
+                <input type="text" class="form-control" id="company" required>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Interest Area*</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="pilot">
+                      <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="licensing">
+                      <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="equipment">
+                      <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="investment">
+                      <label class="form-check-label" for="investment">Investment Opportunity</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="scale" class="form-label">Project Scale</label>
+                  <select class="form-select" id="scale">
+                    <option value="" selected disabled>Select scale</option>
+                    <option value="small">Small-Scale (0.1-1 MTPA)</option>
+                    <option value="mid">Mid-Scale (1-5 MTPA)</option>
+                    <option value="large">Large-Scale (5+ MTPA)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="region" class="form-label">Target Region</label>
+                  <select class="form-select" id="region">
+                    <option value="" selected disabled>Select region</option>
+                    <option value="asia">Asia</option>
+                    <option value="middle-east">Middle East</option>
+                    <option value="north-america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="africa">Africa</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <label for="notes" class="form-label">Additional Requirements</label>
+                <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-submit">
+                Request Proposal <i class="fas fa-paper-plane ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Hero Section -->
+<section class="lng-summary-hero-section" style="
+    background: 
+        linear-gradient(135deg, rgba(18, 18, 18, 0.6), rgba(22, 22, 22, 0.7)),
+        url('assets/img/otherimages/lngliquidback.png') no-repeat center center/cover;
+">
+    <div class="container">
+        <div class="lng-summary-hero-content">
+            <h1 class="display-3 fw-bold mb-4 lng-summary-hero-title" style="color: white;">Revolutionary LNG Liquefaction Technology</h1>
+            <p class="lead mb-4 mx-auto lng-summary-hero-subtitle" style="max-width: 700px;">
+                JTURBO's patented Twin Expander Nitrogen cycle delivers industry-leading efficiency with refrigerant power as low as 269 kWh/ton LNG.
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-5 lng-summary-section">
+        <div class="container py-5 lng-summary-tech-container">
+            <h2 class="lng-summary-section-title">Our Patented Technology</h2>
+            <p class="lead mb-5 lng-summary-tech-description">JTURBO's innovative approach to LNG liquefaction sets new standards in efficiency and cost-effectiveness.</p>
+            
+            <div class="row g-4 lng-summary-tech-row">
+                <div class="col-md-4 lng-summary-tech-col">
+                    <div class="lng-summary-feature-card p-4 lng-summary-tilt-on-hover">
+                        <div class="lng-summary-tech-badge">SMR</div>
+                        <h3 class="lng-summary-feature-title">Strong Mixed Refrigerant Cycle</h3>
+                        <p class="text-muted lng-summary-feature-desc">Delivering specific refrigerant power of 278 kW/Ton with competitive capital expenditure.</p>
+                        <div class="mt-3 lng-summary-feature-stats">
+                            <span class="fw-bold lng-summary-stat-label">Specific Power:</span> 278 kW/Ton<br>
+                            <span class="fw-bold lng-summary-stat-label">CAPEX:</span> >$400 per ton LNG
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 lng-summary-tech-col">
+                    <div class="lng-summary-feature-card p-4 lng-summary-tilt-on-hover">
+                        <div class="lng-summary-tech-badge">PTEXP-M</div>
+                        <h3 class="lng-summary-feature-title">Pre-cooled Twin Expander</h3>
+                        <p class="text-muted lng-summary-feature-desc">Our most efficient cycle with refrigerant power as low as 269 kW/Ton.</p>
+                        <div class="mt-3 lng-summary-feature-stats">
+                            <span class="fw-bold lng-summary-stat-label">Specific Power:</span> 269 kW/Ton<br>
+                            <span class="fw-bold lng-summary-stat-label">CAPEX:</span> >$450 per ton LNG
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 lng-summary-tech-col">
+                    <div class="lng-summary-feature-card p-4 lng-summary-tilt-on-hover">
+                        <div class="lng-summary-tech-badge">TEXP-M</div>
+                        <h3 class="lng-summary-feature-title">Twin Expander Nitrogen Cycle</h3>
+                        <p class="text-muted lng-summary-feature-desc">Balanced solution with 300 kW/Ton power and excellent CAPEX.</p>
+                        <div class="mt-3 lng-summary-feature-stats">
+                            <span class="fw-bold lng-summary-stat-label">Specific Power:</span> 300 kW/Ton<br>
+                            <span class="fw-bold lng-summary-stat-label">CAPEX:</span> >$400 per ton LNG
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lng-summary-highlight-box mt-5 lng-summary-scale-on-hover">
+                <div class="row align-items-center lng-summary-highlight-row">
+                    <div class="col-md-12 lng-summary-highlight-content">
+                        <h4 class="fw-bold lng-summary-highlight-title">US Patent No. 12,181,214</h4>
+                        <p class="mb-0 lng-summary-highlight-text">Our patented Twin Expander Nitrogen cycle LNG Liquefaction Technology offers industry-low refrigerant power (270-300 kWh/ton LNG) and highly competitive CAPEX (>$400 per ton LNG), compared to the industry's prevailing figures of 500 kWh/ton LNG and $800+ per ton LNG.</p>
+                    </div>
+                    <!-- <div class="col-md-4 text-md-end mt-3 mt-md-0 lng-summary-highlight-button">
+                        <a href="/jturbo/patent-leading.html" class="btn btn-primary lng-summary-btn-primary">View Patent Details</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="py-5 lng-summary-bg-light lng-summary-section">
+        <div class="container py-5 lng-summary-comparison-container">
+            <h2 class="lng-summary-section-title">Technology Comparison</h2>
+            <p class="lead mb-5 lng-summary-comparison-intro">See how JTURBO's solutions outperform conventional technologies</p>
+            
+            <div class="table-responsive lng-summary-comparison-table lng-summary-scale-on-hover">
+                <table class="table table-bordered table-hover mb-0 lng-summary-comparison-table-inner">
+                    <thead class="lng-summary-table-head">
+                        <tr class="lng-summary-table-head-row">
+                            <th class="lng-summary-table-head-cell">Description</th>
+                            <th class="lng-summary-table-head-cell">SMR</th>
+                            <th class="lng-summary-table-head-cell">PTEXP-M Cycle</th>
+                            <th class="lng-summary-table-head-cell">TEXP-M Cycle</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white lng-summary-table-body">
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">Treated Feed Gas (MMSCFD)</strong></td>
+                            <td class="lng-summary-table-cell">134.5</td>
+                            <td class="lng-summary-table-cell">134.5</td>
+                            <td class="lng-summary-table-cell">128.6</td>
+                        </tr>
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">LNG Loading (TPD)</strong></td>
+                            <td class="lng-summary-table-cell">3,062</td>
+                            <td class="lng-summary-table-cell">3,062</td>
+                            <td class="lng-summary-table-cell">2,909</td>
+                        </tr>
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">LNG Loading (MTA)</strong></td>
+                            <td class="lng-summary-table-cell">1,103</td>
+                            <td class="lng-summary-table-cell">1,103</td>
+                            <td class="lng-summary-table-cell">1,062</td>
+                        </tr>
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">Specific Refrigerant Power (kW/Ton)</strong></td>
+                            <td class="lng-summary-table-cell">278</td>
+                            <td class="lng-summary-table-cell">269</td>
+                            <td class="lng-summary-table-cell">300</td>
+                        </tr>
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">Total Refrigerant Power (kW)</strong></td>
+                            <td class="lng-summary-table-cell">35,515</td>
+                            <td class="lng-summary-table-cell">33,874</td>
+                            <td class="lng-summary-table-cell">36,334</td>
+                        </tr>
+                        <tr class="lng-summary-table-row">
+                            <td class="lng-summary-table-cell"><strong class="lng-summary-table-label">Total CAPEX (US $ per ton LNG)</strong></td>
+                            <td class="lng-summary-table-cell">> 400</td>
+                            <td class="lng-summary-table-cell">> 450</td>
+                            <td class="lng-summary-table-cell">> 400</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="row mt-5 lng-summary-info-row">
+                <div class="col-lg-6 lng-summary-info-col">
+                    <div class="lng-summary-card border-0 shadow-sm h-100 lng-summary-scale-on-hover">
+                        <div class="card-body lng-summary-info-card-body">
+                            <h4 class="card-title lng-summary-info-card-title" style="color: #1b5e20;">Other LNG Technologies</h4>
+                            <ul class="list-group list-group-flush lng-summary-info-list">
+                                <li class="list-group-item d-flex justify-content-between align-items-center lng-summary-info-item">
+                                    APCI SMR Specific Refrigerant Power
+                                    <span class="badge bg-secondary lng-summary-bouncing">500 kW/Ton</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center lng-summary-info-item">
+                                    Other Gaseous Nitrogen Expander Cycle
+                                    <span class="badge bg-secondary lng-summary-bouncing">300-500 kW/Ton</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0 lng-summary-info-col">
+                    <div class="lng-summary-card border-0 shadow-sm h-100 lng-summary-scale-on-hover">
+                        <div class="card-body lng-summary-info-card-body">
+                            <h4 class="card-title lng-summary-info-card-title" style="color: #1b5e20;">Legend</h4>
+                            <ul class="list-unstyled lng-summary-legend-list">
+                                <li class="mb-2 lng-summary-legend-item"><strong class="lng-summary-legend-term">SMR:</strong> Strong Mixed Refrigerant Cycle</li>
+                                <li class="mb-2 lng-summary-legend-item"><strong class="lng-summary-legend-term">PTEXP-M:</strong> Pre-cooled Twin Expander Nitrogen Cycle</li>
+                                <li class="lng-summary-legend-item"><strong class="lng-summary-legend-term">TEXP-M:</strong> Twin Expander Nitrogen Cycle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 lng-summary-section">
+        <div class="container py-5 lng-summary-benefits-container">
+            <h2 class="lng-summary-section-title">Why choose JTURBO's LNG liquefaction technology</h2>
+            
+            <div class="row g-4 lng-summary-benefits-row">
+                <div class="col-md-6 col-lg-3 lng-summary-benefit-col">
+                    <div class="text-center p-4 lng-summary-feature-card lng-summary-scale-on-hover">
+                        <div class="lng-summary-feature-icon lng-summary-rotating">
+                            <i class="fas fa-bolt lng-summary-benefit-icon"></i>
+                        </div>
+                        <h4 class="lng-summary-benefit-title">Energy Efficient</h4>
+                        <p class="text-muted lng-summary-benefit-desc">Industry-low refrigerant power consumption (270-300 kWh/ton LNG) compared to conventional 500 kWh/ton.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 lng-summary-benefit-col">
+                    <div class="text-center p-4 lng-summary-feature-card lng-summary-scale-on-hover">
+                        <div class="lng-summary-feature-icon">
+                            <i class="fas fa-dollar-sign lng-summary-benefit-icon"></i>
+                        </div>
+                        <h4 class="lng-summary-benefit-title">Cost Effective</h4>
+                        <p class="text-muted lng-summary-benefit-desc">CAPEX as low as >$400 per ton LNG compared to industry standard of $800+ per ton.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 lng-summary-benefit-col">
+                    <div class="text-center p-4 lng-summary-feature-card lng-summary-scale-on-hover">
+                        <div class="lng-summary-feature-icon">
+                            <i class="fas fa-leaf lng-summary-benefit-icon"></i>
+                        </div>
+                        <h4 class="lng-summary-benefit-title">Environmentally Friendly</h4>
+                        <p class="text-muted lng-summary-benefit-desc">Nitrogen-based cycles with lower environmental impact than conventional refrigerants.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 lng-summary-benefit-col">
+                    <div class="text-center p-4 lng-summary-feature-card lng-summary-scale-on-hover">
+                        <div class="lng-summary-feature-icon">
+                            <i class="fas fa-cogs lng-summary-benefit-icon"></i>
+                        </div>
+                        <h4 class="lng-summary-benefit-title">Proven Technology</h4>
+                        <p class="text-muted lng-summary-benefit-desc">Patented solution (US 12,181,214) with demonstrated performance in real-world applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Hero Section with Background Image -->
+  <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
+    <!-- Blurred background -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
+      background-size: cover;
+      filter: blur(10px);
+      pointer-events: none;
+    "></div>
+  
+    <!-- Foreground content -->
+    <div class="container position-relative" style="padding-top:20px;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
+          <p class="lead mb-4">LNG/BIO-LNG adoption improves with modular systems and refrigerant flexibility, enhancing efficiency and scalability while cutting emissions</p>
+          <a href="#" class="btn btn-light btn-lg px-4" style="padding-top:10px;">View more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Discover Section with Contact -->
+  <section class="discover-section py-2" style="background: #f5f5f5;">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Column: Text -->
+          <div class="col-md-8">
+            <h2 class="fw-bold">
+              Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
+              with Expert Guidance
+            </h2>
+          </div>
+    
+          <!-- Right Column: Address -->
+          <div class="col-md-4 text-md-end mt-4 mt-md-0">
+            <p class="mb-1 fw-medium">12345, Texas, United States,</p>
+            <p class="fw-semibold text-dark">(+123) 123-1234</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Main Footer Nav -->
+    <footer class="footer-nav border-top py-3">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <!-- Left Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="geographic.html" class="nav-link px-2 text-muted">Geographic presence</a></li>
+          <li class="nav-item"><a href="petent.html" class="nav-link px-2 text-muted">Petent</a></li>
+          <li class="nav-item"><a href="technology.html" class="nav-link px-2 text-muted">Technology</a></li>
+        </ul>
+    
+        <!-- Center Branding -->
+        <div class="text-center footer-logo"><img src="assets/img/jturbo-logo.png" alt=""></div>
+    
+        <!-- Right Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="intellectual.html" class="nav-link px-2 text-muted">Intellectual property</a></li>
+          <li class="nav-item"><a href="risk.html" class="nav-link px-2 text-muted">Risk Management</a></li>
+          <li class="nav-item"><a href="businees-model.html" class="nav-link px-2 text-muted">Business Model</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <!-- Legal Footer -->
+    <div class="footer-bottom bg-light py-2 border-top">
+      <div class="container d-flex flex-wrap justify-content-between">
+        <div class="text-muted small">© 2025 Infercon. All rights reserved.</div>
+        <div class="text-muted small">
+          <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a> |
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+ <script src="assets/js/home.js"></script>
+    
+    <!-- Scroll Animation Script -->
+    <script class="lng-summary-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all elements with opacity 0 and transform
+            const animatedElements = document.querySelectorAll('.lng-summary-section-title, .lng-summary-feature-card, .lng-summary-comparison-table, .lng-summary-highlight-box, .lng-summary-card, .lng-summary-section');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+            });
+            
+            // Show hero section immediately
+            document.querySelector('.lng-summary-hero-section').style.opacity = '1';
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('lng-summary-section')) {
+                            // For sections - fade in the whole section
+                            anime({
+                                targets: entry.target,
+                                opacity: [0, 1],
+                                translateY: ['30px', '0px'],
+                                duration: 800,
+                                easing: 'easeOutQuad'
+                            });
+                            
+                            // Then fade in the children elements with slight delay
+                            const children = entry.target.querySelectorAll('.lng-summary-section-title, .lng-summary-feature-card, .lng-summary-comparison-table, .lng-summary-highlight-box, .lng-summary-card');
+                            children.forEach((child, index) => {
+                                anime({
+                                    targets: child,
+                                    opacity: [0, 1],
+                                    translateY: ['30px', '0px'],
+                                    duration: 600,
+                                    delay: index * 100,
+                                    easing: 'easeOutQuad'
+                                });
+                            });
+                        } else {
+                            // For individual elements
+                            anime({
+                                targets: entry.target,
+                                opacity: [0, 1],
+                                translateY: ['30px', '0px'],
+                                duration: 600,
+                                easing: 'easeOutQuad'
+                            });
+                        }
+                    } else {
+                        // When scrolling up, fade out elements
+                        if (entry.target.classList.contains('lng-summary-section')) {
+                            entry.target.style.opacity = '0';
+                            entry.target.style.transform = 'translateY(30px)';
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // Observe all animated elements
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add click animation to feature cards
+            document.querySelectorAll('.lng-summary-feature-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    anime({
+                        targets: this,
+                        scale: [1, 0.95, 1],
+                        duration: 300,
+                        easing: 'easeInOutQuad'
+                    });
+                });
+            });
+            
+            // Add hover animation to table rows
+            document.querySelectorAll('.lng-summary-comparison-table tbody tr').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    anime({
+                        targets: this,
+                        scale: 1.01,
+                        backgroundColor: '#e8f5e9',
+                        duration: 300,
+                        easing: 'easeInOutQuad'
+                    });
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    anime({
+                        targets: this,
+                        scale: 1,
+                        backgroundColor: '#ffffff',
+                        duration: 300,
+                        easing: 'easeInOutQuad'
+                    });
+                });
+            });
+            
+            // Add animation to hero button on hover
+            const heroButton = document.querySelector('.lng-summary-hero-content .btn');
+            if (heroButton) {
+                heroButton.addEventListener('mouseenter', function() {
+                    anime({
+                        targets: this,
+                        scale: 1.05,
+                        duration: 200,
+                        easing: 'easeInOutQuad'
+                    });
+                });
+                
+                heroButton.addEventListener('mouseleave', function() {
+                    anime({
+                        targets: this,
+                        scale: 1,
+                        duration: 200,
+                        easing: 'easeInOutQuad'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

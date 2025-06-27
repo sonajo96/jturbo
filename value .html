@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen Liquefaction Efficiency</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  
+    <!-- Favicons -->
+    <link href="assets/img/jturbo-logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/lay.css" rel="stylesheet">
+    <style>
+        .value-body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333333;
+            background-color: white;
+        }
+        .value-header-container {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/otherimages/value.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            text-align: left;
+            border-radius: 0 0 8px 8px;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .value-header-container h1 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .value-header-container p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            max-width: 800px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto;
+        }
+        .value-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            height: 100%;
+            min-height: 400px;
+            border-top: 4px solid #2980b9;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            background-color: #f0f8ff;
+            border-left: 4px solid #2980b9;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px rgba(41, 128, 185, 0.3);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        
+        .card-heading {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 10px 15px;
+            margin: 0;
+            color:#233250;
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            flex-wrap: wrap;
+        }
+        
+        .vp-card-container:nth-child(3) .card-heading {
+            font-size: 0.95rem;
+            padding: 10px 12px;
+            line-height: 1.3;
+        }
+        
+        .value-card-image {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+        
+        .value-card-image img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .value-heads {
+            color:#233250;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .value-card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px;
+        }
+        
+        .value-card ul {
+            text-align: left;
+            padding-left: 0.5rem;
+            margin-bottom: auto;
+        }
+        
+        .value-card ul li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.5rem;
+            list-style-type: none;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .value-card ul li::before {
+            content: '•';
+            color: black;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+        
+        .list-item-content {
+            flex: 1;
+            padding-right: 10px;
+        }
+        
+        .list-item-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .list-item-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .highlight-box-value {
+            background: linear-gradient(135deg, #0a0f2c, #2980b9);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 200;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .vp-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-left: -10px;
+            margin-right: -10px;
+            align-items: stretch;
+        }
+        
+        .vp-card-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex: 0 0 auto;
+            width: 30%;
+        }
+        
+        .vp-card {
+            padding-left: 0;
+            margin: 0;
+            flex: 1;
+        }
+        
+        .vp-card_list-item {
+            font-size: 0.9rem;
+            color: black;
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+            word-break: break-word;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+    
+        
+        .vp-card_list-item::before {
+            content: '✔';
+            color: #2980b9;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+        
+        .vp-card_list-item .list-item-content {
+            flex: 1;
+            padding-right: 10px;
+        }
+        
+        .vp-card_list-item .list-item-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* iPad Air specific adjustments - 820px width */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .vp-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .vp-card-container {
+                width: 50%; /* Make first two cards take 48% each (side by side) */
+                margin-bottom: 20px;
+            }
+            
+            /* Target the third card specifically for iPad Air */
+            .vp-card-container:nth-child(3) {
+                width: 70%; /* Make the third card wider */
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+            }
+            
+            .value-card {
+                min-height: 400px; /* Ensure sufficient height on iPad */
+            }
+            
+            /* Third card slightly shorter height */
+            .vp-card-container:nth-child(3) .value-card {
+                min-height: 360px;
+            }
+            
+            .card-heading {
+                font-size: 0.9rem;
+                line-height: 1.3;
+                min-height: 65px; /* Ensure consistent height for headings */
+                padding: 10px;
+            }
+            
+            .vp-card-container:nth-child(3) .card-heading {
+                font-size: 0.85rem;
+                padding: 10px;
+                min-height: 60px;
+            }
+            
+            .value-card-image {
+                height: 90px;
+            }
+            
+            .vp-card_list-item {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+            
+            .highlight-box {
+                width: 90%;
+                padding: 1.2rem;
+                clear: both;
+            }
+            
+            .list-item-icon {
+                width: 25px;
+                height: 25px;
+            }
+            
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .heros-title {
+                font-size: 1.8rem;
+            }
+            .heros-subtitle {
+                font-size: 0.9rem;
+            }
+            .value-header-container {
+                min-height: 260px;
+                padding: 40px 15px;
+            }
+            .value-card {
+                min-height: 350px;
+            }
+            .card-heading {
+                font-size: 0.9rem;
+                min-height: 50px;
+                padding: 8px 12px;
+            }
+            .vp-card-container:nth-child(3) .card-heading {
+                font-size: 0.85rem;
+                padding: 8px 10px;
+            }
+            .value-card-image {
+                height: 80px;
+            }
+            .value-card ul li {
+                font-size: 0.85rem;
+            }
+            .highlight-box {
+                font-size: 0.9rem;
+                padding: 1rem;
+                margin: 1.5rem auto;
+            }
+            .vp-row {
+                justify-content: center;
+            }
+            .vp-card-container {
+                width: 100%;
+                max-width: 450px;
+            }
+            .vp-card_list-item {
+                font-size: 0.85rem;
+                padding-left: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .list-item-icon {
+                width: 20px;
+                height: 20px;
+            }
+            .value-header-container {
+                min-height: 260px;
+                padding: 40px 15px;
+            }
+            .value-header-container h1 {
+                font-size: 1.8rem;
+            }
+            .value-header-container p {
+                font-size: 0.9rem;
+            }
+        
+        }
+        
+        @media (max-width: 576px) {
+            .value-header-container {
+                min-height: 400px;
+                padding: 30px 10px;
+            }
+            .value-header-container h1 {
+                font-size: 1.5rem;
+            }
+            .value-header-container p {
+                font-size: 0.85rem;
+            }
+            .value-card {
+                min-height: 300px;
+            }
+            .card-heading {
+                font-size: 0.85rem;
+                min-height: 40px;
+                padding: 6px 10px;
+            }
+            .vp-card-container:nth-child(3) .card-heading {
+                font-size: 0.8rem;
+                padding: 6px 8px;
+            }
+            .value-card-image {
+                height: 60px;
+            }
+            .value-card ul li {
+                font-size: 0.8rem;
+            }
+            .highlight-box {
+                font-size: 0.85rem;
+                padding: 0.8rem;
+            }
+            
+            .list-item-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        
+        /* For larger screens (non-iPad), maintain the 3-column layout */
+        @media (min-width: 992px) {
+            .vp-card-container {
+                width: 31%;
+            }
+        }
+    </style>
+</head>
+<body class="value-body">
+        <!-- Navigation Bar -->
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+        
+              <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="assets/img/jturbo-logo.png" alt="">
+              </a>
+        
+              <nav id="navmenu" class="navmenu">
+                <ul>
+                  <li><a href="index .html" class="active">Home</a></li>
+                  <li><a href="index .html#about">About</a></li>
+                  <li><a href="index.html#services">Services</a></li>
+                 
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+              </nav>
+              <a class="cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">Enquiry</a>
+        
+            </div>
+          </header>
+
+          <!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="form-container">
+              </div>
+            </div>
+            <div class="form-section">
+              <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="form-header">
+                <h1>ENQUIRE</h1>
+                <p>Get in touch with our team</p>
+              </div>
+              
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Full Name*</label>
+                    <input type="text" class="form-control" id="name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="title" class="form-label">Job Title*</label>
+                    <input type="text" class="form-control" id="title" required>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="email" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone*</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                  </div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="company" class="form-label">Organization*</label>
+                  <input type="text" class="form-control" id="company" required>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label">Interest Area*</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="pilot">
+                        <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="licensing">
+                        <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="equipment">
+                        <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="investment">
+                        <label class="form-check-label" for="investment">Investment Opportunity</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="scale" class="form-label">Project Scale</label>
+                    <select class="form-select" id="scale">
+                      <option value="" selected disabled>Select scale</option>
+                      <option value="small">Small-Scale (0.1-1 MTPA)</option>
+                      <option value="mid">Mid-Scale (1-5 MTPA)</option>
+                      <option value="large">Large-Scale (5+ MTPA)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="region" class="form-label">Target Region</label>
+                    <select class="form-select" id="region">
+                      <option value="" selected disabled>Select region</option>
+                      <option value="asia">Asia</option>
+                      <option value="middle-east">Middle East</option>
+                      <option value="north-america">North America</option>
+                      <option value="europe">Europe</option>
+                      <option value="africa">Africa</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="mb-4">
+                  <label for="notes" class="form-label">Additional Requirements</label>
+                  <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-submit">
+                  Request Proposal <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+          <div class="value-header-container">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h1>Value Propositions</h1>
+                <p >Advanced refrigerant handling cuts hydrogen plant downtime by 40%, increasing output by 6,000 tons annually.</p>
+            </div>
+        </div>
+    
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row vp-row">
+            <div class="col-md-4 vp-card-container">
+               
+                <div class="value-card p-3">
+                    <h4 class="card-heading">Hydrogen Advancements</h4>
+                    <div class="value-card-image">
+                       
+                        <img src="assets/img/otherimages/h2.jpg" alt="Hydrogen icon">
+                    </div>
+                    <div class="value-card-body">
+                        <ul class="vp-card">
+                            
+                            <h5 class="value-heads">Hydrogen Advancements:</h5>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    <b>Energy Efficiency:</b> Reduces SEC to 5.7 kWh/kg, saving 50% in energy costs
+                                </div>
+                
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    <b>Energy Savings:</b> A 200 TPD hydrogen plant saves 2M+ kWh/year, worth to $204k/year at $0.10/kWh
+                                </div>
+
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    <b>Downtime Reduction:</b> Advanced refrigerant handling cuts liquefaction downtime by 40%, increasing operational days from 300 to 330/year
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vp-card-container">
+           
+                <div class="value-card p-3">
+                    <h4 class="card-heading">2-Year Payback Period</h4>
+                    <div class="value-card-image">
+                        <img src="assets/img/otherimages/graph.avif" alt="Financial graph">
+                    </div>
+                    <div class="value-card-body">
+                        <ul class="vp-card">
+                           
+                            <h5 class="value-heads">3-Year Payback Period:</h5>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    With $204k annual energy savings + Operational Efficiencies -> Full CAPEX recovery in 3 years
+                                </div>
+                                
+                            </li>
+                            <h5 class="value-heads">Cost Efficiency</h5>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    Direct savings from reduced energy and maintenance costs
+                                </div>
+                        
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    Faster deployment of modular design enhances time-to-market efficiency
+                                </div>
+                             
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vp-card-container">
+                
+                <div class="value-card p-3">
+                    <h4 class="card-heading">First-mover advantage in hydrogen liquefaction with twin expander technology</h4>
+                    <div class="value-card-image">
+                        <img src="assets/img/otherimages/award.avif" alt="Award icon">
+                    </div>
+                    <div class="value-card-body">
+                        <ul class="vp-card">
+                          
+                            <h5 class="value-heads">Hydrogen Facility:</h5>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    40% | Reduced Downtime
+                                </div>
+                            
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    $18M | Adding in Revenue
+                                </div>
+
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    6,000 tons/year | Increasing Operational Output
+                                </div>
+
+                            </li>
+                            <li class="vp-card_list-item">
+                                <div class="list-item-content">
+                                    Net Zero Alignment: Aligns with net zero goals and earns carbon credits
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="highlight-box-value" data-aos="fade-up" data-aos-delay="200">
+            <strong>Revenue Boost:</strong> Increased production of 6,000 tons/year at $3/kg H₂ generating $18M/year
+        </div>
+    </div>
+ <!-- Hero Section with Background Image -->
+ <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
+    <!-- Blurred background -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
+      background-size: cover;
+      filter: blur(10px);
+      pointer-events: none;
+    "></div>
+  
+    <!-- Foreground content -->
+    <div class="container position-relative" style="padding-top:20px;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
+          <p class="lead mb-4">LNG/BIO-LNG adoption improves with modular systems and refrigerant flexibility, enhancing efficiency and scalability while cutting emissions</p>
+          <a href="#" class="btn btn-light btn-lg px-4" style="padding-top:10px;">View more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+    
+  
+  <!-- Discover Section with Contact -->
+  <section class="discover-section py-2" style="background: #f5f5f5;">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Column: Text -->
+          <div class="col-md-8">
+            <h2 class="fw-bold">
+              Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
+              with Expert Guidance
+            </h2>
+          </div>
+    
+          <!-- Right Column: Address -->
+          <div class="col-md-4 text-md-end mt-4 mt-md-0">
+            <p class="mb-1 fw-medium">12345, Texas, United States,</p>
+            <p class="fw-semibold text-dark">(+123) 123-1234</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Main Footer Nav -->
+    <footer class="footer-nav border-top py-3">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <!-- Left Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="geographic.html" class="nav-link px-2 text-muted">Geographic presence</a></li>
+          <li class="nav-item"><a href="petent.html" class="nav-link px-2 text-muted">Petent</a></li>
+          <li class="nav-item"><a href="technology.html" class="nav-link px-2 text-muted">Technology</a></li>
+        </ul>
+    
+        <!-- Center Branding -->
+        <div class="text-center footer-logo"><img src="assets/img/jturbo-logo.png" alt=""></div>
+    
+        <!-- Right Navigation -->
+        <ul class="nav">
+          <li class="nav-item"><a href="intellectual.html" class="nav-link px-2 text-muted">Intellectual property</a></li>
+          <li class="nav-item"><a href="risk.html" class="nav-link px-2 text-muted">Risk Management</a></li>
+          <li class="nav-item"><a href="businees-model.html" class="nav-link px-2 text-muted">Business Model</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <!-- Legal Footer -->
+    <div class="footer-bottom bg-light py-2 border-top">
+      <div class="container d-flex flex-wrap justify-content-between">
+        <div class="text-muted small">© 2025 Infercon. All rights reserved.</div>
+        <div class="text-muted small">
+          <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a> |
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">KnightOne</h3>
+      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">KnightOne</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+        
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Traction Metrics</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/jturbo-logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/lay.css" rel="stylesheet">
+  
+  <style>
+    body .traction {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    .trac-header-image-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .header-image {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .trac-header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text contrast */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .trac-header-overlay h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .trac-header-overlay p {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+
+    .section-title {
+      color: #1f2d3d;
+      font-weight: bold;
+      border-left: 5px solid #0d6efd;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-6px);
+    }
+    .highlight {
+      color: #0d6efd;
+      font-weight: 600;
+    }
+    .img-fluid {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .chart-box {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px dashed #0d6efd;
+      padding: 2rem;
+      text-align: center;
+      color: #0d6efd;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .custom-card {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto 2rem auto;
+      align-items: center;
+      box-shadow: 8px 8px 0px darkblue, 8px 8px 12px rgba(0, 0, 0, 0.25);
+      border: 2px solid #6bb6d6;
+      flex-wrap: nowrap; /* prevent wrap */
+      margin-top: 30px;
+    }
+
+    .text-box {
+      flex: 1;
+      align-self: center;
+      padding-right: 15px;
+
+    }
+
+    .img-right {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-left: 0;      /* or whatever spacing works */
+      margin-top: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .ribbon {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      background: darkblue;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 20px;
+      padding-right: 40px;
+      width: 50%;
+      clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+      z-index: 2;
+    }
+
+    .content {
+      font-size: 0.85rem; /* Slightly reduced text size */
+      color: black;
+      font-weight: bold;
+    }
+
+    
+
+    .icon-img {
+      height: 55px;
+      margin-right: 15px;
+    }
+
+    .highlight {
+      color: #000;
+      font-weight: 600;
+    }
+
+    .content {
+      font-size: 0.88rem;
+      color: black;
+      
+      font-weight: bold;
+    }
+   
+
+    .img-right {
+      margin-left: 0;
+      margin-top: 15px;
+   }
+
+  .header-traction {
+    background: linear-gradient(135deg, #0a0f2c, #2980b9);
+    color:white;
+    padding: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    }
+
+    .header-traction h4{
+      color: white;
+    }
+    
+    .flip-card {
+      perspective: 1000px;
+      height: 100px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transition: transform 0.8s ease-in-out;
+      transform-style: preserve-3d;
+      border: 1px dashed #0d6efd;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .flipped {
+      transform: rotateX(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px;
+      border: 1px dashed darkblue;
+      border-radius: 10px;
+      background-color: rgba(255,255,255,0.05);
+    }
+
+    .flip-card:hover {
+        box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+  }
+
+    .flip-card-back {
+    
+      transform: rotateX(180deg);
+    }
+
+    .icon {
+      margin-right: 15px;
+      font-size: 1.5rem;
+    }
+
+    .doe-icon {
+      color: #b92d21;
+    }
+
+    .nrel-icon {
+      color: #9933cc;
+    }
+    .visual-enhancements-box:hover ,.milestones-box:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      background-color: #f0f8ff; /* Light blue highlight color - you can change this */
+      border-left: 4px solid #2980b9;
+    }
+
+    .visual-enhancements-box:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 20px rgba(41, 128, 185, 0.3); /* Matching glow color */
+      border-radius: 10px;
+      z-index: -1;
+    }
+    
+
+    .card-text {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .recognition-header {
+      background: linear-gradient(135deg, #0a0f2c, #2980b9);
+      color: white;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-radius: 10px 10px 0 0; /* Rounded top corners */
+    }
+
+  .recognition-header h4{
+      color: white;
+  }
+    .recognition-box {
+    background-color: white;
+    border: 1px dashed #0d6efd;
+    border-radius: 10px;
+    padding: 15px;
+    height: 120px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+  }
+  .recognition-box h4 {
+  margin-top: 0;
+  
+  margin-bottom: 10px;
+  font-size: 1rem; /* Consistent font size */
+}
+
+.recognition-box ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.9rem; /* Consistent font size */
+}
+
+.recognition-box:hover {
+        box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+  }
+
+/* Summary box styling */
+.summary-box {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 10%;
+  transform: translateX(-10%);
+  display: block;
+}
+
+/* Header section with dark blue background */
+.summary-header {
+  background-color: #0a4a8a; /* Dark blue from Bootstrap primary */
+  color: white;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Optional: Adjust for light blue content if you want to expand the design */
+.summary-content {
+  background-color: #e9f0f9; /* Light blue background */
+  padding: 10px 15px;
+  color: #333;
+  font-size: 0.95rem;
+  font-style: italic;
+  min-height: 30px;
+}
+
+/* Visual enhancements box */
+.visual-enhancements-box, .milestones-box {
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      padding: 15px;
+      flex-direction: column;
+      height: 100%; /* Ensures equal height with flex */
+    }
+    .visual-enhancements-header, .milestones-header {
+      background: linear-gradient(135deg, #0a0f2c, #2980b9);
+      color: #FFFFFF;
+      padding: 20px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: left;
+      line-height: 1.4;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex: 0 0 auto; /* Header takes its natural height */
+    }
+    .visual-enhancements-content, .milestones-content {
+      background-color: #ffffff; /* White background as requested */
+      padding: 20px;
+      color: #1a2e44;
+      font-size: 1rem;
+      flex: 1; /* Content takes remaining height */
+      display: flex;
+      flex-direction: column;
+      min-height: 180px; /* Minimum height to match content */
+    }
+    .visual-enhancements-item, .milestones-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .visual-enhancements-icon {
+      margin-right: 20px;
+      font-size: 1.8rem;
+      color: #0d6efd;
+      transition: transform 0.3s ease;
+    }
+    .visual-enhancements-item:hover .visual-enhancements-icon {
+      transform: rotate(15deg);
+    }
+    .milestones-icon {
+      margin-right: 20px;
+      font-size: 1.8rem;
+      color: #0d6efd; /* Changed to blue theme */
+      transition: transform 0.3s ease;
+    }
+    .milestones-item:hover .milestones-icon {
+      transform: scale(1.2);
+    }
+    .milestones-figure {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+      opacity: 0.7;
+    }
+    body.traction .summary-box,
+    body.traction .visual-enhancements-box,
+    body.traction .milestones-box {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @media (max-width: 768px) {
+      .trac-header-overlay {
+      padding: 15px;
+    }
+    .trac-header-overlay h1 {
+      margin-bottom: 10px;
+    }
+      .custom-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        align-items: center;
+        max-width: 90%;
+       
+      }
+      .text-box {
+      padding-right: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+      .img-right {
+        margin-left: 0;
+        width: 100px;
+        height: 100px;
+        
+      }
+      .ribbon{
+        width: 70%;
+        font-size: 0.8rem;
+      }
+      .flip-card, .recognition-box {
+        height: 150px;
+      }
+      .summary-box {
+        width: 95%; 
+      }
+      .summary-header {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+      }
+
+      .visual-enhancements-box, .milestones-box {
+        margin-bottom: 1.5rem;
+      }
+      .visual-enhancements-content, .milestones-content {
+        min-height: 200px; /* Adjusted for mobile stacking */
+      }
+      .milestones-figure {
+        width: 80px;
+        bottom: 5px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header-overlay {
+        padding: 10px;
+      }
+      .header-overlay p {
+        font-size: 1rem;
+      }
+      .custom-card {
+      padding: 25px 15px;
+      max-width: 95%;
+    }
+  
+      .ribbon {
+        height: 35px;
+        line-height: 35px;
+        font-size: 0.75rem;
+      }
+      .summary-box {
+        width: 95%; /* Full width on mobile */
+        border-radius: 8px; /* Slightly rounded */
+        margin: 1.5rem auto; /* Smaller margin */
+      }
+      .summary-header {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+      }
+      }
+  </style>
+</head>
+<body class="traction">
+
+  
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/jturbo-logo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index .html" class="active">Home</a></li>
+          <li><a href="index .html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+         
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">Enquiry</a>
+
+    </div>
+  </header>
+
+  <!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="form-container">
+            </div>
+          </div>
+          <div class="form-section">
+            <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="form-header">
+              <h1>ENQUIRE</h1>
+              <p>Get in touch with our team</p>
+            </div>
+            
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name*</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="title" class="form-label">Job Title*</label>
+                  <input type="text" class="form-control" id="title" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email*</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone*</label>
+                  <input type="tel" class="form-control" id="phone" required>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="company" class="form-label">Organization*</label>
+                <input type="text" class="form-control" id="company" required>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Interest Area*</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="pilot">
+                      <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="licensing">
+                      <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="equipment">
+                      <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="investment">
+                      <label class="form-check-label" for="investment">Investment Opportunity</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="scale" class="form-label">Project Scale</label>
+                  <select class="form-select" id="scale">
+                    <option value="" selected disabled>Select scale</option>
+                    <option value="small">Small-Scale (0.1-1 MTPA)</option>
+                    <option value="mid">Mid-Scale (1-5 MTPA)</option>
+                    <option value="large">Large-Scale (5+ MTPA)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="region" class="form-label">Target Region</label>
+                  <select class="form-select" id="region">
+                    <option value="" selected disabled>Select region</option>
+                    <option value="asia">Asia</option>
+                    <option value="middle-east">Middle East</option>
+                    <option value="north-america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="africa">Africa</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <label for="notes" class="form-label">Additional Requirements</label>
+                <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-submit">
+                Request Proposal <i class="fas fa-paper-plane ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Header Text Section -->
+ 
+
+  <div class="trac-header-image-container">
+    <img src="assets/img/otherimages/traction.jpg" alt="Traction Overview" class="header-image">
+    <div class="trac-header-overlay">
+      <h1>Traction Metrics</h1>
+      <p>Pilot projects show strong energy savings, market traction, and scalable impact with high customer satisfaction</p>
+    </div>
+  </div>
+    <!-- All your metric sections below remain the same -->
+    <div class="custom-card d-flex justify-content-between align-items-center" data-aos="fade-up" data-aos-delay="200">
+      <div class="ribbon">Pilot Project Results</div>
+    
+      <!-- Left: Text -->
+      <div class="text-box ">
+        <span class="highlight">Hydrogen Performance:</span>
+        <p class="content mb-0">
+          A 200 TPD hydrogen facility achieved an SEC of 5.7 kWh/kg H<sub>2</sub>,
+          exceeding industry benchmarks by 50%
+        </p>
+      </div>
+    
+      <!-- Right: Image -->
+      <img src="assets/img/otherimages/hydrogen_facility.jpg" alt="Traction" class="img-right">
+    </div>
+
+    <div class="container py-4 "data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-md-6">
+      <div class="header-traction mb-4">
+
+        <h4>Market Engagement & Partnerships</h4>
+      </div>
+  
+      
+          <div class="flip-card" onclick="flipCard()" data-aos="fade-up" data-aos-delay="200">
+            <div class="flip-card-inner" id="flipCardInner">
+              <div class="flip-card-front">
+                <span class="icon doe-icon">➔</span>
+                <span class="card-text">Collaborating with US DOE Hydrogen Hubs on pilot projects</span>
+              </div>
+              <div class="flip-card-back">
+                <span class="icon nrel-icon">➔</span>
+                <span class="card-text">Partnering with NREL for technology validation and optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+
+    <div class="col-md-6">
+      <div class="recognition-header" data-aos="fade-up" data-aos-delay="300">     
+        <h4>Recognition & Commercial Interest</h4>
+      </div>
+        <div class="recognition-box">
+        <ul>
+          <li>Featured at Gastech & Hydrogen conference, attracting stakeholder interest.</li>
+          <li>Received awards for cryogenic liquefaction innovation.</li>
+          <li>Identified 20+ prospective clients, with a $15M pipeline value for Year 1.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="summary-box">
+  <div class="summary-header" data-aos="fade-up" data-aos-delay="400">
+    The initiatives highlighted gains in energy performance, valuable alliances, sector-wide acclaim, and efficient rollout strategies for expanded market adoption.
+  </div>
+ 
+</div>
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="visual-enhancements-box" data-aos="fade-up" data-aos-delay="400">
+        <div class="visual-enhancements-header">Visual Enhancements</div>
+        <div class="visual-enhancements-content">
+          <div class="visual-enhancements-item">
+            <span class="visual-enhancements-icon">📊</span>
+            <span>Charts and graphs illustrating energy savings, SEC improvements, and reduced carbon footprints for hydrogen pilot projects</span>
+          </div>
+          <div class="visual-enhancements-item">
+            <span class="visual-enhancements-icon">📋</span>
+            <span>Pilot test results showing energy and cost savings from hydrogen implementation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="milestones-box" data-aos="fade-up" data-aos-delay="400">
+        <div class="milestones-header">Expansion & Performance Milestones</div>
+        <div class="milestones-content">
+          <div class="milestones-item">
+            <span class="milestones-icon">✅</span>
+            <span>Achieved 90% customer satisfaction and 20% lower maintenance costs</span>
+          </div>
+          <div class="milestones-item">
+            <span class="milestones-icon">🚀</span>
+            <span>Successfully deployed 3 pilot projects within 24 months, supporting commercialization efforts</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+     <script>
+    const flipCardInner = document.getElementById('flipCardInner');
+
+    function flipCard() {
+      flipCardInner.classList.toggle('flipped');
+    }
+
+    // Auto flip every 4 seconds
+    setInterval(flipCard, 4000);
+  </script>
+
+
+
+    
+       <!-- Main Footer Nav -->
+       <footer class="footer-nav border-top py-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+          <!-- Left Navigation -->
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Properties</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Services</a></li>
+          </ul>
+      
+          <!-- Center Branding -->
+          <div class="text-center footer-logo"><img src="assets/img/jturbo-logo.png" alt=""></div>
+      
+          <!-- Right Navigation -->
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Gallery</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
+      
+      <!-- Legal Footer -->
+      <div class="footer-bottom bg-light py-2 border-top">
+        <div class="container d-flex flex-wrap justify-content-between">
+          <div class="text-muted small">© 2025 EverGreen. All rights reserved.</div>
+          <div class="text-muted small">
+            <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a> |
+            <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+  
+    <!-- <footer id="footer" class="footer dark-background">
+      <div class="container">
+        <h3 class="sitename">KnightOne</h3>
+        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <div class="social-links d-flex justify-content-center">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-skype"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <span>Copyright</span> <strong class="px-1 sitename">KnightOne</strong> <span>All Rights Reserved</span>
+          </div>
+          <div class="credits">
+          
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Preloader -->
+    <div id="preloader"></div>
+  
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  
+  </body>
+  
+  </html>
