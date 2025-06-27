@@ -56,7 +56,7 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'poppins';
             background-color: var(--white);
             color: var(--dark-gray);
             line-height: 1.6;
@@ -318,36 +318,240 @@
         
         
         
-        @media (max-width: 768px) {
-           .banner {
-        height: 80vh;
+        /* Responsive Improvements */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
         min-height: 600px;
-      }
-      
-      .banner h1 {
-        font-size: 2rem;
-      }
-      
-      .banner p {
+    }
+    
+    .banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    .banner p {
         font-size: 1.1rem;
-      }
-            
-            .content-section {
-                flex-direction: column;
-            }
-            
-            .card {
-                min-width: 100%;
-            }
-            
-           
-        }
+    }
+    
+    .content-section {
+        gap: 1.5rem;
+    }
+    
+    .title-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .banner h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .banner p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .problem-statement {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .content-section {
+        flex-direction: column;
+        margin: 3rem 0;
+    }
+    
+    .card {
+        min-width: 100%;
+    }
+    
+    .advantages {
+        padding: 2rem;
+    }
+    
+    .advantages h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        height: 40vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .banner-content {
+        padding: 1rem;
+    }
+    
+    .problem-statement {
+        padding: 1.25rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.3rem;
+    }
+    
+    .advantages {
+        padding: 1.5rem;
+    }
+    
+    .advantages h2 {
+        font-size: 1.5rem;
+    }
+    
+    .title-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .discover-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-nav .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .footer-logo {
+        margin: 1rem 0;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Navigation responsiveness */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        padding-top: 1rem;
+    }
+    
+    .navbar-nav {
+        margin-bottom: 1rem;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        float: none;
+    }
+    
+    .dropdown-container {
+        flex-direction: column;
+    }
+    
+    .sidebar-menu, .content-area {
+        width: 100%;
+    }
+    
+    .content-area {
+        display: none;
+    }
+}
+
+/* Modal responsiveness */
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 0.5rem auto;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+    }
+    
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .form-check {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve button sizes on mobile */
+.btn {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Adjust font sizes for better readability on small devices */
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p, li {
+        font-size: 0.95rem;
+    }
+}
     </style>
 </head>
 <body>
 
       <!-- Navigation from file.html -->
-  <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+ <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
        <img src="assets/img/jturbo-logo.png" style="height: 100px; width: 100px;" alt="JTurbo Logo">
@@ -379,7 +583,7 @@
                   <a href="/jturbo/leading-edge.html" class="menu-item"><i class="fas fa-atom"></i> JTurbo Hydrogen Liquefaction Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a>
                   
                   <div class="menu-header" style="margin-top: 2rem;">Company History  </div>
-                  <a href="/jturbo/profile.html" class="menu-item"><i class="fas fa-user-tie"></i>Founder Profile  <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/jturbo/profile.html" class="menu-item"><i class="fas fa-user-tie"></i> Founder Profile <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
                   <!-- <a href="/efficiency-technology" class="menu-item"><i class="fas fa-tachometer-alt"></i> Efficiency Driven Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a> -->
                   <a href="/jturbo/company-overview.html" class="menu-item"><i class="fas fa-building"></i> Company Overview <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
                 </div>
@@ -662,37 +866,44 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="pilot">
-                      <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                      <input class="form-check-input" type="checkbox" id="hydrogen">
+                      <label class="form-check-label" for="pilot">Hydrogen liquefaction</label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="licensing">
-                      <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                      <input class="form-check-input" type="checkbox" id="small-scale">
+                      <label class="form-check-label" for="licensing">LNG Production Small Scale</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="equipment">
-                      <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                      <input class="form-check-input" type="checkbox" id="large-scale">
+                      <label class="form-check-label" for="equipment">LNG Production Large Scale</label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="investment">
-                      <label class="form-check-label" for="investment">Investment Opportunity</label>
+                      <input class="form-check-input" type="checkbox" id="data-center">
+                      <label class="form-check-label" for="investment">Data Center energy supply and cooling</label>
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="investment">
+                      <label class="form-check-label" for="equipment">Investment Opportunity</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="engineering">
+                      <label class="form-check-label" for="investment">Engineering Services</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="general">
+                      <label class="form-check-label" for="equipment">General Enquiry(others)</label>
+                    </div>
                 </div>
               </div>
               
               <div class="row">
-                <div class="col-md-6">
-                  <label for="scale" class="form-label">Project Scale</label>
-                  <select class="form-select" id="scale">
-                    <option value="" selected disabled>Select scale</option>
-                    <option value="small">Small-Scale (0.1-1 MTPA)</option>
-                    <option value="mid">Mid-Scale (1-5 MTPA)</option>
-                    <option value="large">Large-Scale (5+ MTPA)</option>
-                  </select>
-                </div>
+               
                 <div class="col-md-6">
                   <label for="region" class="form-label">Target Region</label>
                   <select class="form-select" id="region">
@@ -707,8 +918,8 @@
               </div>
               
               <div class="mb-4">
-                <label for="notes" class="form-label">Additional Requirements</label>
-                <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+                <label for="notes" class="form-label">Detailed Description</label>
+                <textarea class="form-control" id="notes" rows="4" placeholder="Please add as much details as possible about your requirements..."></textarea>
               </div>
               
               <button type="submit" class="btn btn-submit">
@@ -789,17 +1000,17 @@
     </div>
 
       <!-- Hero Section with Background Image -->
-  <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
+  <!-- <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;"> -->
     <!-- Blurred background -->
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+    <!-- <div class="position-absolute top-0 start-0 w-100 h-100" style="
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
       background-size: cover;
       filter: blur(10px);
       pointer-events: none;
-    "></div>
+    "></div> -->
   
     <!-- Foreground content -->
-    <div class="container position-relative" style="padding-top:20px;">
+    <!-- <div class="container position-relative" style="padding-top:20px;">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
@@ -808,23 +1019,23 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   
   
   <!-- Discover Section with Contact -->
-  <section class="discover-section py-2" style="background: #f5f5f5;">
+  <!-- <section class="discover-section py-2" style="background: #f5f5f5;">
       <div class="container">
         <div class="row align-items-center">
           <!-- Left Column: Text -->
-          <div class="col-md-8">
+          <!-- <div class="col-md-8">
             <h2 class="fw-bold">
               Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
               with Expert Guidance
             </h2>
-          </div>
-    
+          </div> -->
+     
           <!-- Right Column: Address -->
-          <div class="col-md-4 text-md-end mt-4 mt-md-0">
+          <div class="col-md-12 text-center mt-4 mt-md-0">
             <p class="mb-1 fw-medium">12345, Texas, United States,</p>
             <p class="fw-semibold text-dark">(+123) 123-1234</p>
           </div>

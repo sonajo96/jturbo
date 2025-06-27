@@ -256,7 +256,7 @@ function showAlert(message, type = 'success') {
     alert.classList.remove('show');
     setTimeout(() => {
       alert.remove();
-      window.close();
+    
     }, 300);
   }, 5000);
 }
@@ -273,9 +273,8 @@ if (form) {
       email: document.getElementById('email').value,
       phone: document.getElementById('phone').value,
       company: document.getElementById('company').value,
-      interests: ['pilot', 'licensing', 'equipment', 'investment']
+      interests: ['hydrogen','small-scale','large-scale','data-center','investment','engineering','general']
         .filter(id => document.getElementById(id)?.checked),
-      scale: document.getElementById('scale').value,
       region: document.getElementById('region').value,
       notes: document.getElementById('notes').value,
     };

@@ -50,7 +50,7 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'poppins';
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
@@ -511,6 +511,7 @@
         @media (max-width: 992px) {
             .jt-feature-card-container {
                 flex-direction: column;
+                gap:0;
             }
             
             .jt-image-stack,
@@ -519,10 +520,26 @@
             }
             
             .jt-image-stack {
-                min-height: 300px;
-                margin-bottom: 25px;
+                min-height: 400px;
+                margin-bottom: 10px;
+                
             }
-            
+             .jt-base-image {
+                height: 150%;
+          }
+            .jt-overlay-image {
+                width: 50%;
+                height: 50%;
+                right: 20px;
+                bottom: 20px;
+    }
+    
+          .jt-feature-card {
+              margin-top: 0;
+              height: auto;
+              padding: 20px;
+          }
+
             .jt-hero-title {
                 font-size: 2rem;
             }
@@ -553,7 +570,14 @@
                 font-size: 1.5rem;
                 text-align: center;
             }
-            
+            .jt-global-reach-section {
+        padding-top: 10px !important;  /* Reduced from 20px */
+        padding-bottom: 20px !important;
+    }
+             .jt-global-map {
+        margin-top: 15px;  /* Reduced spacing above map */
+        margin-bottom: 15px;  /* Reduced spacing below map */
+    }
             .jt-global-map {
                 height: 300px;
             }
@@ -568,6 +592,8 @@
             
             .jt-stats-container {
                 flex-wrap: wrap;
+                margin-bottom: 10px;  /* Reduced spacing between stats */
+        padding: 0.5rem;
             }
             
             .jt-stat-item {
@@ -590,7 +616,23 @@
             .jt-applications-section {
                 padding: 60px 0;
             }
-        }
+       .jt-image-stack {
+        min-height: 350px;
+    }
+    
+    .jt-base-image {
+        height: 140%;
+    }
+    .jt-stat-number {
+        font-size: 1.5rem;  /* Slightly smaller on mobile */
+        margin-bottom: 0.25rem;  /* Reduced gap between number and label */
+    }
+    
+    /* Stats labels */
+    .jt-stat-label {
+        font-size: 0.75rem;  /* Slightly smaller on mobile */
+    }
+}
         
         @media (max-width: 576px) {
             .jt-hero-title {
@@ -633,8 +675,7 @@
             </div>
         </div>
     </section> -->
-
-       <!-- Navigation from file.html -->
+<!-- Navigation from file.html -->
   <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
@@ -667,7 +708,7 @@
                   <a href="/jturbo/leading-edge.html" class="menu-item"><i class="fas fa-atom"></i> JTurbo Hydrogen Liquefaction Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a>
                   
                   <div class="menu-header" style="margin-top: 2rem;">Company History  </div>
-                  <a href="/jturbo/profile.html" class="menu-item"><i class="fas fa-user-tie"></i> Jacob's Profile <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
+                  <a href="/jturbo/profile.html" class="menu-item"><i class="fas fa-user-tie"></i> Founder Profile <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
                   <!-- <a href="/efficiency-technology" class="menu-item"><i class="fas fa-tachometer-alt"></i> Efficiency Driven Technology <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span> </a> -->
                   <a href="/jturbo/company-overview.html" class="menu-item"><i class="fas fa-building"></i> Company Overview <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></a>
                 </div>
@@ -950,37 +991,44 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="pilot">
-                      <label class="form-check-label" for="pilot">Pilot Project Deployment</label>
+                      <input class="form-check-input" type="checkbox" id="hydrogen">
+                      <label class="form-check-label" for="pilot">Hydrogen liquefaction</label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="licensing">
-                      <label class="form-check-label" for="licensing">Licensing Twin Expander Tech</label>
+                      <input class="form-check-input" type="checkbox" id="small-scale">
+                      <label class="form-check-label" for="licensing">LNG Production Small Scale</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="equipment">
-                      <label class="form-check-label" for="equipment">Equipment Package Sales</label>
+                      <input class="form-check-input" type="checkbox" id="large-scale">
+                      <label class="form-check-label" for="equipment">LNG Production Large Scale</label>
                     </div>
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="investment">
-                      <label class="form-check-label" for="investment">Investment Opportunity</label>
+                      <input class="form-check-input" type="checkbox" id="data-center">
+                      <label class="form-check-label" for="investment">Data Center energy supply and cooling</label>
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="investment">
+                      <label class="form-check-label" for="equipment">Investment Opportunity</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="engineering">
+                      <label class="form-check-label" for="investment">Engineering Services</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="general">
+                      <label class="form-check-label" for="equipment">General Enquiry(others)</label>
+                    </div>
                 </div>
               </div>
               
               <div class="row">
-                <div class="col-md-6">
-                  <label for="scale" class="form-label">Project Scale</label>
-                  <select class="form-select" id="scale">
-                    <option value="" selected disabled>Select scale</option>
-                    <option value="small">Small-Scale (0.1-1 MTPA)</option>
-                    <option value="mid">Mid-Scale (1-5 MTPA)</option>
-                    <option value="large">Large-Scale (5+ MTPA)</option>
-                  </select>
-                </div>
+               
                 <div class="col-md-6">
                   <label for="region" class="form-label">Target Region</label>
                   <select class="form-select" id="region">
@@ -995,8 +1043,8 @@
               </div>
               
               <div class="mb-4">
-                <label for="notes" class="form-label">Additional Requirements</label>
-                <textarea class="form-control" id="notes" rows="4" placeholder="Describe your LNG/BIO-LNG needs..."></textarea>
+                <label for="notes" class="form-label">Detailed Description</label>
+                <textarea class="form-control" id="notes" rows="4" placeholder="Please add as much details as possible about your requirements..."></textarea>
               </div>
               
               <button type="submit" class="btn btn-submit">
@@ -1009,6 +1057,7 @@
     </div>
   </div>
 </div>
+
 
      <header class="banner">
         <div class="particles" id="particles"></div>
@@ -1188,17 +1237,17 @@
 </section>
 
   <!-- Hero Section with Background Image -->
-  <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
-    <!-- Blurred background -->
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="
+  <!-- <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;">
+    Blurred background -->
+    <!-- <div class="position-absolute top-0 start-0 w-100 h-100" style="
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
       background-size: cover;
       filter: blur(10px);
       pointer-events: none;
-    "></div>
+    "></div> --> 
   
     <!-- Foreground content -->
-    <div class="container position-relative" style="padding-top:20px;">
+    <!-- <div class="container position-relative" style="padding-top:20px;">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
@@ -1207,23 +1256,16 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   
   
   <!-- Discover Section with Contact -->
   <section class="discover-section py-2" style="background: #f5f5f5;">
       <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Column: Text -->
-          <div class="col-md-8">
-            <h2 class="fw-bold">
-              Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
-              with Expert Guidance
-            </h2>
-          </div>
+      
     
           <!-- Right Column: Address -->
-          <div class="col-md-4 text-md-end mt-4 mt-md-0">
+          <div class="col-md-12 text-center mt-4 mt-md-0">
             <p class="mb-1 fw-medium">12345, Texas, United States,</p>
             <p class="fw-semibold text-dark">(+123) 123-1234</p>
           </div>
@@ -1292,67 +1334,57 @@
             once: true,
             mirror: false,
         });
+document.addEventListener('DOMContentLoaded', function() {
+    const overlayImage = document.querySelector('.jt-overlay-image');
+    const section = document.querySelector('.jt-feature-section');
+    const moveDistance = window.innerWidth < 992 ? 100 : 250; // Smaller movement on mobile
+    
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    
+    function handleScroll() {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+            requestAnimationFrame(updatePosition);
+            ticking = true;
+        }
+    }
+    
+    function updatePosition() {
+        if (!section || !overlayImage) return;
         
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlayImage = document.querySelector('.jt-overlay-image');
-            const section = document.querySelector('.jt-feature-section');
-            const moveDistance = 250;
-            
-            let lastScrollY = window.scrollY;
-            let ticking = false;
-            
-            function handleScroll() {
-                lastScrollY = window.scrollY;
-                if (!ticking) {
-                    requestAnimationFrame(updatePosition);
-                    ticking = true;
-                }
-            }
-            
-            function updatePosition() {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const windowHeight = window.innerHeight;
-                
-                let scrollProgress = (lastScrollY - sectionTop) / (sectionHeight - windowHeight);
-                scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
-                
-                const movement = scrollProgress * moveDistance;
-                if (overlayImage) {
-                    overlayImage.style.transform = `translateY(${-movement}px)`;
-                }
-                
-                ticking = false;
-            }
-            
-            updatePosition();
-            window.addEventListener('scroll', handleScroll, { passive: true });
-        });
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const isMobile = window.innerWidth < 992;
         
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.jt-application-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Parallax effect for floating elements
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelectorAll('.jt-floating-element');
-                
-                parallax.forEach((element, index) => {
-                    const speed = 0.5 + (index * 0.1);
-                    element.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-        });
+        // Adjust calculation for mobile
+        const startOffset = isMobile ? windowHeight * 0.2 : sectionTop;
+        const endOffset = isMobile ? (sectionTop + sectionHeight - windowHeight * 0.5) : (sectionTop + sectionHeight - windowHeight);
+        
+        let scrollProgress = (lastScrollY - startOffset) / (endOffset - startOffset);
+        scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+        
+        // Different easing for mobile
+        const easedProgress = isMobile ? 
+            scrollProgress * scrollProgress : // Quadratic easing for mobile
+            scrollProgress;
+        
+        const movement = easedProgress * moveDistance;
+        overlayImage.style.transform = `translateY(${-movement}px)`;
+        
+        ticking = false;
+    }
+    
+    // Initialize and add event listener
+    updatePosition();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Handle resize
+    window.addEventListener('resize', function() {
+        updatePosition();
+    });
+});
     </script>
 </body>
 </html>

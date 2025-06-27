@@ -5,31 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownToggles.forEach(function(dropdownToggle) {
     // Initialize Bootstrap dropdown (click only)
     var dropdown = new bootstrap.Dropdown(dropdownToggle, {
-      autoClose: true
+      autoClose: true // This ensures dropdown closes when clicking outside
     });
-    
-    // Add click handler directly to toggle
-    dropdownToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const dropdownMenu = this.nextElementSibling;
-      const isShowing = dropdownMenu.classList.contains('show');
-      
-      // Close all other dropdowns first
-      document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
-        if (openMenu !== dropdownMenu) {
-          openMenu.classList.remove('show');
-        }
-      });
-      
-      // Toggle this dropdown
-      if (!isShowing) {
-        dropdownMenu.classList.add('show');
-        
-        // Animation for dropdown items
+  });
+
+  // Animation for dropdown items (only on click)
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const dropdown = toggle.nextElementSibling;
+      if (dropdown.classList.contains('show')) {
         anime({
-          targets: dropdownMenu.querySelectorAll('.menu-item'),
+          targets: dropdown.querySelectorAll('.menu-item'),
           translateX: [-20, 0],
           opacity: [0, 1],
           delay: anime.stagger(100),
@@ -38,20 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
-      document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
-        openMenu.classList.remove('show');
-      });
-    }
-  });
 });
 
 // Prevent dropdown from closing when clicking inside
 document.querySelectorAll('.dropdown-menu').forEach(menu => {
-  menu.addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
 });
