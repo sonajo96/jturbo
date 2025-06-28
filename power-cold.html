@@ -551,7 +551,7 @@ img {
 <body>
 
       <!-- Navigation from file.html -->
- <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
        <img src="assets/img/jturbo-logo.png" style="height: 100px; width: 100px;" alt="JTurbo Logo">
@@ -808,6 +808,12 @@ img {
               Contact
             </a>
           </li>
+       <li class="nav-item d-lg-none">
+                        <a class="mobile-enquiry-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                            <i class="fas fa-envelope me-3"></i>Enquiry
+                        </a>
+                    </li>
+                </ul>
         </ul>        <!-- Enquiry Button - Now properly placed in the navbar -->
         <div class="d-flex">
           <a class="btn btn-success cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
@@ -896,10 +902,14 @@ img {
                   </div>
                   <div class="col-md-6">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="general">
-                      <label class="form-check-label" for="equipment">General Enquiry(others)</label>
+                      <input class="form-check-input" type="checkbox" id="large-scale">
+                      <label class="form-check-label" for="equipment">General(others)</label>
                     </div>
-                </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="data-center">
+                      <label class="form-check-label" for="investment">Carrer opportunity</label>
+                    </div>
+                  </div>
               </div>
               
               <div class="row">
@@ -999,82 +1009,77 @@ img {
         </div>
     </div>
 
-      <!-- Hero Section with Background Image -->
-  <!-- <section class="hero-section text-white text-center d-flex align-items-center position-relative overflow-hidden" style="height: 50vh;"> -->
-    <!-- Blurred background -->
-    <!-- <div class="position-absolute top-0 start-0 w-100 h-100" style="
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center;
-      background-size: cover;
-      filter: blur(10px);
-      pointer-events: none;
-    "></div> -->
-  
-    <!-- Foreground content -->
-    <!-- <div class="container position-relative" style="padding-top:20px;">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h1 class="fw-bold display-5 mb-3" style="color:#fff;padding-top:10px;padding-bottom:20px;padding-top:30px;">LNG/BIO-LNG</h1>
-          <p class="lead mb-4">LNG/BIO-LNG adoption improves with modular systems and refrigerant flexibility, enhancing efficiency and scalability while cutting emissions</p>
-          <a href="#" class="btn btn-light btn-lg px-4" style="padding-top:10px;">View more</a>
+ 
+<footer class="footer-modern bg-white position-relative" style="overflow: hidden; border-top: 1px solid #e0e0e0; padding-bottom: 60px;">
+
+  <!-- Floating Circles (light gray, subtle) -->
+  <div class="floating-shapes">
+    <svg class="shape shape-1" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" stroke="#00cc88" stroke-opacity="0.08" stroke-width="2" fill="none" />
+    </svg>
+    <svg class="shape shape-2" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="28" stroke="#00cc88" stroke-opacity="0.06" stroke-width="2" fill="none" />
+    </svg>
+    <svg class="shape shape-3" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="26" stroke="#00cc88" stroke-opacity="0.04" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Footer Content -->
+  <div class="container py-5 position-relative" style="z-index: 2;">
+    <div class="row gy-5">
+      <!-- Branding -->
+      <div class="col-lg-4">
+        <img src="assets/img/jturbo-logo.png" alt="JTURBO Logo" class="footer-image mb-3">
+        <p class="text-muted" style="max-width: 300px; font-size: 1rem;">
+          Empowering clean energy through innovation. LNG/BIO-LNG solutions for a sustainable tomorrow.
+        </p>
+        <div class="social-icons mt-3">
+          <a href="#" class="me-3 text-body"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="me-3 text-body"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="me-3 text-body"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="me-3 text-body"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-    </div>
-  </section> -->
-  
-  
-  <!-- Discover Section with Contact -->
-  <!-- <section class="discover-section py-2" style="background: #f5f5f5;">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Column: Text -->
-          <!-- <div class="col-md-8">
-            <h2 class="fw-bold">
-              Discover <span style="color:#28a745;">Nature’s</span> Wonders<br>
-              with Expert Guidance
-            </h2>
-          </div> -->
-     
-          <!-- Right Column: Address -->
-          <div class="col-md-12 text-center mt-4 mt-md-0">
-            <p class="mb-1 fw-medium">12345, Texas, United States,</p>
-            <p class="fw-semibold text-dark">(+123) 123-1234</p>
+
+      <!-- Quick Links -->
+      <div class="col-lg-4">
+        <h6 class="fw-bold text-uppercase mb-4" style="letter-spacing: 1px; color: #333;">Quick Links</h6>
+        <ul class="list-unstyled text-muted">
+          <li class="mb-2"><a href="geographic.html" class="footer-link text-decoration-none text-muted">Geographic Presence</a></li>
+          <li class="mb-2"><a href="petent.html" class="footer-link text-decoration-none text-muted">Patent</a></li>
+          <li class="mb-2"><a href="technology.html" class="footer-link text-decoration-none text-muted">Technology</a></li>
+          <li class="mb-2"><a href="intellectual.html" class="footer-link text-decoration-none text-muted">Intellectual Property</a></li>
+          <li class="mb-2"><a href="risk.html" class="footer-link text-decoration-none text-muted">Risk Management</a></li>
+          <li><a href="businees-model.html" class="footer-link text-decoration-none text-muted">Business Model</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Newsletter -->
+      <div class="col-lg-4">
+        <h6 class="fw-bold text-uppercase mb-4" style="letter-spacing: 1px; color: #333;">Contact</h6>
+        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2 text-success"></i>12345, Texas, USA</p>
+        <p class="text-muted mb-2"><i class="fas fa-phone me-2 text-success"></i>(+123) 123-1234</p>
+        <p class="text-muted mb-4"><i class="fas fa-envelope me-2 text-success"></i>info@jturbo.com</p>
+
+        <form>
+          <div class="input-group">
+            <input type="email" class="form-control border" placeholder="Subscribe to newsletter">
+            <button class="btn" type="submit" style="background: #00cc88; color: white;">
+              <i class="fas fa-paper-plane"></i>
+            </button>
           </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Main Footer Nav -->
-    <footer class="footer-nav border-top py-3">
-      <div class="container d-flex flex-wrap justify-content-between align-items-center">
-        <!-- Left Navigation -->
-        <ul class="nav">
-          <li class="nav-item"><a href="geographic.html" class="nav-link px-2 text-muted">Geographic presence</a></li>
-          <li class="nav-item"><a href="petent.html" class="nav-link px-2 text-muted">Petent</a></li>
-          <li class="nav-item"><a href="technology.html" class="nav-link px-2 text-muted">Technology</a></li>
-        </ul>
-    
-        <!-- Center Branding -->
-        <div class="text-center footer-logo"><img src="assets/img/jturbo-logo.png" alt=""></div>
-    
-        <!-- Right Navigation -->
-        <ul class="nav">
-          <li class="nav-item"><a href="intellectual.html" class="nav-link px-2 text-muted">Intellectual property</a></li>
-          <li class="nav-item"><a href="risk.html" class="nav-link px-2 text-muted">Risk Management</a></li>
-          <li class="nav-item"><a href="businees-model.html" class="nav-link px-2 text-muted">Business Model</a></li>
-        </ul>
-      </div>
-    </footer>
-    
-    <!-- Legal Footer -->
-    <div class="footer-bottom bg-light py-2 border-top">
-      <div class="container d-flex flex-wrap justify-content-between">
-        <div class="text-muted small">© 2025 Infercon. All rights reserved.</div>
-        <div class="text-muted small">
-          <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a> |
-          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
-        </div>
+        </form>
       </div>
     </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom text-center pt-4">
+    <hr class="text-muted">
+    <small class="text-muted">© 2025 JTURBO. All rights reserved. | <a href="#" class="text-decoration-none text-muted">Privacy</a> | <a href="#" class="text-decoration-none text-muted">Terms</a></small>
+  </div>
+</footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
