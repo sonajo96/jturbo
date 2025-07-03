@@ -113,7 +113,7 @@
             background-color: white;
             border-radius: 10px;
             padding: 3rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+           
             margin-bottom: 3rem;
             border-left: 5px solid var(--accent);
             opacity: 0;
@@ -153,12 +153,17 @@
         }
         
         .dc-features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          margin-bottom: 3rem;
+          width: 100%;
+          max-width: 1400px; /* Adjust this value as needed */
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0 2rem; /* Add padding to prevent touching edges */
+      }
+              
         .dc-feature-card {
             background: white;
             border-radius: 10px;
@@ -166,6 +171,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border-top: 4px solid var(--accent);
+             border-bottom: 3px solid var(--accent);
             text-align: center;
             position: relative;
             opacity: 0;
@@ -176,6 +182,7 @@
         .dc-feature-card:hover {
             transform: translateY(-10px) scale(1.03) rotateX(0deg);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+             border-bottom-color: var(--primary); 
             z-index: 10;
         }
         
@@ -239,6 +246,12 @@
             text-align: left;
             transition: all 0.3s ease;
         }
+
+        .dc-container .dc-image img {
+            box-shadow: none !important;
+          }
+
+
         
         .dc-feature-card li:hover {
             transform: translateX(5px);
@@ -253,61 +266,108 @@
             line-height: 1;
         }
         
-        .dc-benefits {
-            color: black;
-            padding: 4rem 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s ease;
-        }
-        
-        .dc-benefits h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        
-        .dc-benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .dc-benefit-item {
-            background: rgba(255,255,255,0.15);
-            padding: 2rem;
-            border-radius: 10px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.2);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
-        
-        .dc-benefit-item:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-5px);
-        }
-        
-        .dc-benefit-item h3 {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            font-size: 1.3rem;
-        }
-        
-        .dc-benefit-item h3:before {
-            content: "✓";
-            margin-right: 0.8rem;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
+      .dc-benefits {
+          padding: 5rem 2rem;
+          text-align: center;
+          width: 100%;
+      }
+
+      .dc-benefits-heading {
+          font-size: 2.2rem;
+          margin-bottom: 3rem;
+          color: var(--dark);
+          position: relative;
+         
+      }
+
+      
+
+      .circular-benefits-grid {
+          display: flex;
+          justify-content: space-around; /* Evenly distributes space */
+          align-items: center;
+          flex-wrap: wrap; /* Allows wrapping on small screens */
+          max-width: 1400px;
+          margin: 0 auto;
+          gap: 1.5rem;
+      }
+
+      .circular-benefit {
+           flex: 1;
+          min-width: 220px; /* Minimum size before wrapping */
+          max-width: 280px;
+          perspective: 1000px;
+      }
+
+      .circle-content {
+    background: white;
+    border-radius: 50%;
+    padding: 1.5rem;
+    aspect-ratio: 1/1; /* Perfect circle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border: 3px solid var(--light);
+    margin: 0 auto;
+}
+
+
+      .circle-content:hover {
+          transform: scale(1.05);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+          border-color: var(--accent);
+    }
+
+      .circle-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: var(--light);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--accent);
+    }
+
+      .circle-content h3 {
+          color: var(--primary);
+          font-size: 1.1rem;
+          margin-bottom: 0.85rem;
+          text-align: center;
+      }
+
+      .circle-content p {
+        color: #555;
+        line-height: 1.5;
+        font-size: 0.85rem;
+        text-align: center;
+        padding: 0 0.5rem;
+    }
+
+      /* Animation for circles */
+      @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+      }
+
+      .circular-benefit:nth-child(1) .circle-content {
+          animation: float 4s ease-in-out infinite;
+      }
+      .circular-benefit:nth-child(2) .circle-content {
+          animation: float 4s ease-in-out infinite 0.5s;
+      }
+      .circular-benefit:nth-child(3) .circle-content {
+          animation: float 4s ease-in-out infinite 1s;
+      }
+      .circular-benefit:nth-child(4) .circle-content {
+          animation: float 4s ease-in-out infinite 1.5s;
+      }
         
         @media (max-width: 1024px) {
             .dc-features {
@@ -321,6 +381,12 @@
             .dc-tagline {
                 font-size: 1.3rem;
             }
+            .circular-benefit {
+               min-width: 200px;
+          }
+          .circle-content h3 {
+              font-size: 1rem;
+          }
         }
         
         @media (max-width: 768px) {
@@ -354,6 +420,37 @@
             .dc-intro {
                 padding: 2rem;
             }
+
+             .circle-content {
+        height: 260px;
+        width: 260px;
+        padding: 2rem;
+    }
+    
+    .circle-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .circle-content p {
+        font-size: 0.9rem;
+    }
+
+    .circular-benefits-container {
+        gap: 1rem;
+    }
+    .circular-benefit {
+        min-width: 160px;
+        max-width: 160px;
+    }
+    .circle-content {
+        padding: 1rem;
+    }
+    .circle-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
         }
         
         /* Animation classes */
@@ -365,6 +462,20 @@
         .dc-header-visible .dc-header-content {
             transform: translateY(-20px);
         }
+
+        @media (max-width: 576px) {
+    .circular-benefit {
+        min-width: 130px;
+        max-width: 130px;
+    }
+    .circle-content h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .circle-content p {
+        font-size: 0.75rem;
+    }
+}
     </style>
 </head>
 <body class="dc-body">
@@ -373,9 +484,8 @@
  <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-       <img src="assets/img/jturbo-logo.png" style="height: 100px; width: 100px;" alt="JTurbo Logo">
-
-      </a>
+    <img src="assets/img/jturbo-logo.png" class="jturbo-logo" alt="JTurbo Logo">
+</a>
       
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="hamburger-icon">
@@ -518,7 +628,7 @@
     </h2>
     <div id="hydrogenMenu" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
       <div class="accordion-body p-0">
-        <a href="/jturbo/power-cold.html" class="menu-item"><i class="fas fa-battery-full"></i> Power and Cold Energy Buffer</a>
+        <a href="/jturbo/power-cold.html" class="menu-item"><i class="fas fa-battery-full"></i> Power and Cold Energy Buffer <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a></a>
         <!-- <a href="/lh2-15tpd" class="menu-item"><i class="fas fa-tint"></i> LH2 15TPD</a>
         <a href="/lh2-30tpd" class="menu-item"><i class="fas fa-tint"></i> LH2 30TPD</a> -->
       </div>
@@ -548,10 +658,10 @@
     </h2>
     <div id="specialMenu" class="accordion-collapse collapse" data-bs-parent="#productsAccordion">
       <div class="accordion-body p-0">
-        <a href="/jturbo/power-island.html" class="menu-item"><i class="fas fa-industry"></i> Power Island</a>
-        <a href="/jturbo/data-center.html" class="menu-item"><i class="fas fa-database"></i> Data Center Solutions</a>
-        <a href="/jturbo/data-nitrogen.html" class="menu-item"><i class="fas fa-fan"></i> Nitrogen Cooling</a>
-        <a href="/jturbo/gn-turbo.html" class="menu-item"><i class="fas fa-cog"></i> GN2 Turbo</a>
+        <a href="/jturbo/power-island.html" class="menu-item"><i class="fas fa-industry"></i> Power Island <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a></a>
+        <a href="/jturbo/data-center.html" class="menu-item"><i class="fas fa-database"></i> Data Center Solutions <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a></a>
+        <a href="/jturbo/data-nitrogen.html" class="menu-item"><i class="fas fa-fan"></i> Nitrogen Cooling <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a></a>
+        <a href="/jturbo/gn-turbo.html" class="menu-item"><i class="fas fa-cog"></i> GN2 Turbo <span class="leftsidebar-arrow"><i class="fas fa-arrow-right"></i></span></i></a></a>
         <!-- <a href="/comprehensive" class="menu-item"><i class="fas fa-cubes"></i> Comprehensive Solutions</a>
         <a href="/renewables" class="menu-item"><i class="fas fa-leaf"></i> Industrial Optimization</a> -->
       </div>
@@ -767,14 +877,26 @@
         </div>
     </header>
     
-    <div class="dc-container">
-        <section class="dc-intro">
-            <p><span class="dc-highlight">Leveraging Liquefied Natural Gas (LNG) or Liquid Hydrogen (LH₂) vaporization</span> for cooling AI data centers is an innovative approach that combines high-efficiency cryogenic thermal management with energy recovery.</p>
-            
-            <p>Both <span class="dc-highlight">LNG (-162°C)</span> and <span class="dc-highlight">LH₂ (-253°C)</span> exist as super-cooled liquids, and their phase change from liquid to gas absorbs a large amount of heat. This property can be harnessed for <span class="dc-highlight">data center cooling</span> before the gases are used as fuel for power generation or other applications.</p>
-        </section>
+    <div class="dc-container mt-5" style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+  
+  <!-- Left: Image -->
+  <div class="dc-image" style="flex: 1 1 40%; min-width: 300px;">
+    <img src="assets/img/otherimages/data.png" alt="LNG Data Center Cooling" style="width: 100%; border-radius: 12px;">
+  </div>
+
+  <!-- Right: Text -->
+  <div class="dc-intro" style="flex: 1 1 55%; min-width: 300px; box-shadow: none !important;">
+    <p>
+      <span class="dc-highlight">Leveraging Liquefied Natural Gas (LNG) or Liquid Hydrogen (LH₂) vaporization</span> for cooling AI data centers is an innovative approach that combines high-efficiency cryogenic thermal management with energy recovery.
+    </p>
+    <p>
+      Both <span class="dc-highlight">LNG (-162°C)</span> and <span class="dc-highlight">LH₂ (-253°C)</span> exist as super-cooled liquids, and their phase change from liquid to gas absorbs a large amount of heat. This property can be harnessed for <span class="dc-highlight">data center cooling</span> before the gases are used as fuel for power generation or other applications.
+    </p>
+  </div>
+</div>
+
         
-        <section class="dc-features">
+        <section class="dc-features mt-5">
             <div class="dc-feature-card">
                 <div class="dc-feature-icon">❄️</div>
                 <h3>Cryogenic Heat Exchange</h3>
@@ -816,32 +938,47 @@
             </div>
         </section>
         
-        <section class="dc-benefits">
-            <h2 class="dc-benefits-heading">Key Benefits</h2>
-            <div class="dc-benefits-grid">
-                <div class="dc-benefit-item">
-                    <h3>Ultra-Efficient Heat Removal</h3>
-                    <p>Cryogenic fluids provide better thermal conductivity than air or traditional liquid cooling.</p>
-                </div>
-                
-                <div class="dc-benefit-item">
-                    <h3>Reduced Energy Consumption</h3>
-                    <p>Eliminates the need for conventional air conditioning, lowering PUE (Power Usage Effectiveness).</p>
-                </div>
-                
-                <div class="dc-benefit-item">
-                    <h3>Sustainable Cooling + Energy Generation</h3>
-                    <p>LH₂ can be used to power fuel cells or gas turbines, making this a dual-purpose system.</p>
-                </div>
-                
-                <div class="dc-benefit-item">
-                    <h3>Compact and Scalable</h3>
-                    <p>Cryogenic cooling reduces space requirements for cooling infrastructure in AI data centers.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+  <section class="dc-benefits">
+    <h2 class="dc-benefits-heading">Key Benefits</h2>
     
+    <div class="circular-benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="circular-benefit">
+            <div class="circle-content">
+                <div class="circle-icon">❄️</div>
+                <h3>Ultra-Efficient Heat Removal</h3>
+                <p>Cryogenic fluids provide better thermal conductivity than air or traditional liquid cooling.</p>
+            </div>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="circular-benefit">
+            <div class="circle-content">
+                <div class="circle-icon">⚡</div>
+                <h3>Reduced Energy Consumption</h3>
+                <p>Eliminates the need for conventional air conditioning, lowering PUE (Power Usage Effectiveness).</p>
+            </div>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="circular-benefit">
+            <div class="circle-content">
+                <div class="circle-icon">♻️</div>
+                <h3>Sustainable Cooling + Energy Generation</h3>
+                <p>LH₂ can be used to power fuel cells or gas turbines, making this a dual-purpose system.</p>
+            </div>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="circular-benefit">
+            <div class="circle-content">
+                <div class="circle-icon">📐</div>
+                <h3>Compact and Scalable</h3>
+                <p>Cryogenic cooling reduces space requirements for cooling infrastructure in AI data centers.</p>
+            </div>
+        </div>
+    </div>
+</section>
      
        <!-- Hero Section with Background Image -->
 <footer class="footer-modern bg-white position-relative" style="overflow: hidden; border-top: 1px solid #e0e0e0; padding-bottom: 60px;">
@@ -865,7 +1002,7 @@
       <!-- Branding -->
       <div class="col-lg-4">
         <img src="assets/img/jturbo-logo.png" alt="JTURBO Logo" class="mb-3 footer-image">
-        <p class="text-muted" style="max-width: 300px; font-size: 1rem;">
+        <p class="text-muted footer-tagline" >
           Empowering clean energy through innovation. LNG/BIO-LNG solutions for a sustainable tomorrow.
         </p>
         <div class="social-icons mt-3">

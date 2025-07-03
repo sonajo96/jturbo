@@ -55,4 +55,3 @@ document.querySelectorAll('.dropdown-menu').forEach(menu => {
     e.stopPropagation();
   });
 });
-

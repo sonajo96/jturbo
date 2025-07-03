@@ -585,9 +585,17 @@ h6 {
   max-width: 80px;
 }
 
-.footer-image{
-  width: 80%;
-  max-width: 100px;
+.footer-image {
+  width: 100%;        /* Increase width */
+  max-width: 160px;   /* Previously was 100px, now larger */
+  height: auto;       /* Keeps image proportion */
+  margin-left: 40px;
+}
+
+.footer-tagline{
+ max-width: 300px; 
+ font-size: 1rem; 
+ margin-top: -50px;
 }
 
 .footer .social-links {
@@ -1016,11 +1024,14 @@ section,
   align-items: center;
 }
 
+/* About Section Icons - Increased size */
 .about ul i {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  padding-right: 4px;
+  font-size: 1.5rem;       /* Increased from 1.05rem to 1.5rem (24px) */
+  min-width: 1.75rem;      /* Ensures consistent spacing */
+  line-height: 1.8;        /* Better vertical alignment */
+  padding-right: 10px;     /* Increased spacing after icon */
   color: var(--accent-color);
+  vertical-align: middle;  /* Better alignment with text */
 }
 
 .about .read-more {
@@ -2061,9 +2072,9 @@ section,
 --------------------------------------------------------------*/
 
 
-.starter-section {
+/* .starter-section {
   /* Add your styles here */
-}
+*/
 
 /*--------------------------------------------------------------
 # Blog Posts Section
