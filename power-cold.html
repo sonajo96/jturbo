@@ -203,12 +203,12 @@
     padding-bottom: 3rem;
 }
 
-.title-divider {
+/* .title-divider {
     width: 80px;
     height: 4px;
     background: var(--accent-green);
     margin: 1.5rem 0;
-}
+} */
 
 .title-section h1 {
     font-weight: 700;
@@ -953,61 +953,88 @@ img {
 
   <!-- After the banner section, add this title section -->
 <section class="title-section py-5">
-    <div class="container">
-        <div class="row ">
-            <div class="col-lg-8 ">
-                <h1 class="display-5 fw-bold mb-4" style="color: #006633; text-align: left;">Cryogenic Energy Storage</h1>
-    
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="fw-bold mb-4" style="color: #006633;">
+          Enabling 24/7 Hydrogen Supply Using Renewable Energy and Cryogenic Buffers
+        </h1>
+        <div class="title-divider"></div>
+      </div>
     </div>
+  </div>
 </section>
 
+
+<div class="container">
+    <div class="problem-statement" data-aos="fade-up" data-aos-delay="100">
+        <h3>The Challenge</h3>
+        <p>Continuous hydrogen demand—especially for industrial applications—must be met around the clock. But renewable energy sources like solar and wind are only available part of the day. How do we bridge the gap?</p>
+    </div>
     
-    
-    
-    <div class="container">
-        <div class="problem-statement"  data-aos="fade-up" data-aos-delay="100">
-            <p>Addressing 24 hour/day hydrogen demand using part-day renewable energy is the problem statement.</p>
-        </div>
-        
-        <div class="content-section">
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h2>Utilization of LH₂ and LN₂ as Energy Buffers</h2>
-                <ul>
-                    <li><strong>Day and Night LH₂ Handling:</strong> Renewable energy, whenever available, is used to produce and liquefy and store hydrogen (LH₂) for later use during its unavailability.</li>
-                    <li><strong>Day and Night LN₂ Handling:</strong> Cold energy from LH₂ vaporization is recovered in the night and utilized to liquefy nitrogen (LN₂), which is stored for later use for precooling in the hydrogen cycle.</li>
-                </ul>
-            </div>
+    <div class="content-section">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h2>Our Solution: Smart Energy Buffering with LH₂ and LN₂</h2>
+            <p>We deploy a high-efficiency hydrogen infrastructure that leverages Liquefied Hydrogen (LH₂) and Liquefied Nitrogen (LN₂) as thermal and energy buffers to ensure uninterrupted supply—even when renewables aren't available.</p>
             
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h2>Optimized Air Separation Unit (ASU) Operation</h2>
-                <ul>
-                    <li><strong>Nighttime GAN Production:</strong>
-                        <ul class="nested-list">
-                            <li>Must cover and optimize:</li>
-                            <li>Ammonia synthesis demand.</li>
-                            <li>Gaseous Nitrogen to recover the cold energy.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Daytime GAN Production:</strong>
-                        <ul class="nested-list">
-                            <li>Must account for:</li>
-                            <li>Ammonia synthesis demand.</li>
-                            <li>Deduct GAN already available from LN₂ vaporization used in hydrogen precooling.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <h3 class="mt-4">How It Works</h3>
+            <ul>
+                <li><strong>☀️ Daytime: Renewable-Powered Hydrogen Production</strong>
+                    <ul class="nested-list">
+                        <li>Renewable electricity is used to produce, liquefy, and store hydrogen (LH₂)</li>
+                        <li>Surplus power is stored as clean fuel, ready for use during off-hours</li>
+                    </ul>
+                </li>
+                <li><strong>🌙 Nighttime: Hydrogen Release + Cold Energy Recovery</strong>
+                    <ul class="nested-list">
+                        <li>Stored LH₂ is vaporized to meet nighttime hydrogen demand</li>
+                        <li>Cold energy released during vaporization is captured to liquefy nitrogen (LN₂)</li>
+                    </ul>
+                </li>
+                <li><strong>🔄 Next Day: Reusing Stored Cold Energy</strong>
+                    <ul class="nested-list">
+                        <li>LN₂ is vaporized during the next hydrogen liquefaction cycle</li>
+                        <li>This pre-cools hydrogen gas, drastically improving liquefaction efficiency</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         
-        <div class="advantages" data-aos="fade-up" data-aos-delay="100">
-            <h2>Key Advantages</h2>
-            <p><span class="highlight">Cold Energy is not lost during vaporization</span> saving the entire cold energy and OPEX.</p>
-            <p><span class="highlight">Hydrogen buffer is very cost effective.</span></p>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h2>Optimized ASU (Air Separation Unit) Integration</h2>
+            <ul>
+                <li><strong>Nighttime ASU Operation</strong>
+                    <ul class="nested-list">
+                        <li>Produces Gaseous Nitrogen (GAN) to:</li>
+                        <li>Support ammonia synthesis</li>
+                        <li>Recover and store cold energy in LN₂</li>
+                    </ul>
+                </li>
+                <li><strong>Daytime ASU Operation</strong>
+                    <ul class="nested-list">
+                        <li>Supplies GAN for ammonia synthesis</li>
+                        <li>Reduces load by deducting GAN obtained from LN₂ vaporization</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="mt-4 pt-3 border-top">
+                <h3>Key Benefits</h3>
+                <ul>
+                    <li> 24/7 Hydrogen Availability — Even with part-day renewable supply</li>
+                    <li> Zero Cold Energy Waste — Full recovery during LH₂ vaporization</li>
+                    <li> Lower Operating Costs — Due to energy-efficient cryogenic integration</li>
+                    <li> Scalable & Sustainable — Ideal for industrial, grid, and export-scale systems</li>
+                </ul>
+            </div>
         </div>
     </div>
-
+    
+    <div class="advantages" data-aos="fade-up" data-aos-delay="100">
+        <h2>Revolutionizing Green Hydrogen Infrastructure</h2>
+        <p>By turning cold energy into a reusable asset, and strategically timing gas production and storage, we're setting a new standard in hydrogen efficiency, cost savings, and sustainability.</p>
+    </div>
+</div>
  
 <footer class="footer-modern bg-white position-relative" style="overflow: hidden; border-top: 1px solid #e0e0e0; padding-bottom: 60px;">
 

@@ -410,7 +410,244 @@
   background: #f1fff1;
   transform: translateY(-3px);
 }
-  
+
+  /* Professional Stage Styles */
+  .professional-stage {
+            max-width: 1400px;
+            margin: 6rem auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .professional-header {
+            background: linear-gradient(135deg, #004d26, #006400);
+            padding: 2rem 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .professional-number {
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: #fff;
+            color: #006400;
+            margin-right: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .stage-subtitle {
+            color: rgba(255,255,255,0.85);
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+        }
+
+        .professional-content {
+            padding: 3rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .professional-visual {
+            flex: 1.2;
+            position: relative;
+             margin-top: 15rem;
+        }
+
+        .professional-image {
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: floatRotate 8s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .professional-image:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
+        }
+
+        @keyframes floatRotate {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% { 
+                transform: translateY(-10px) rotate(1deg);
+            }
+            50% { 
+                transform: translateY(-5px) rotate(0deg);
+            }
+            75% { 
+                transform: translateY(-15px) rotate(-1deg);
+            }
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .why-it-matters-standalone {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .why-it-matters-content {
+            background: linear-gradient(135deg, #004d26, #006400);
+            border-radius: 24px;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(26, 54, 93, 0.3);
+        }
+
+        .why-it-matters-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .why-it-matters-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-it-matters-title i {
+            color: #ffd700;
+            margin-right: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .why-it-matters-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, green);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            
+  background: rgba(255, 255, 255, 0.2); /* Light translucent white */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1), 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color:darkgreen;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+
+
+         @media (max-width: 992px) {
+            .professional-content {
+                flex-direction: column;
+            }
+
+            .performance-highlight {
+                flex-direction: column;
+            }
+        }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -459,7 +696,124 @@
       flex-direction: column;
       align-items: flex-start; /* Changed from center to flex-start */
     }
-    }
+
+    .why-it-matters-content {
+                padding: 2.5rem;
+            }
+            
+            .why-it-matters-title {
+                font-size: 2rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .professional-features {
+            flex: 1;
+        }
+
+        .feature-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .stage-intro {
+            background: #f8f9fa;
+            border-left: 4px solid #007f33;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .stage-intro p {
+            margin: 0;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .feature-section-title {
+            font-size: 1.3rem;
+            color: #004d26;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .feature-icon {
+            margin-right: 0.8rem;
+            color: #007f33;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .professional-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            align-items: flex-start;
+            padding: 0.8rem 1rem;
+            background: #f9f9f9;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .professional-item:hover {
+            background: #f1f9f1;
+            transform: translateX(5px);
+        }
+
+        .feature-marker {
+            width: 8px;
+            height: 8px;
+            background: #007f33;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .performance-highlight {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .performance-card {
+            flex: 1;
+            background: #f5faf5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .performance-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #006400;
+            margin-bottom: 0.5rem;
+        }
+
+        .performance-label {
+            font-size: 0.95rem;
+            color: #555;
+        }
+    
   </style>
   <!-- Font Awesome for download icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -867,76 +1221,158 @@
   </div>
 </div>
 
-  <section class="technology-intro" data-aos="fade-up">
-  <div class="intro-container">
-    <div class="intro-heading">
-      <h2>Revolutionary Hydrogen Liquefaction Technology</h2>
-      <p>JTurbo's patented two-stage refrigeration system sets new standards in hydrogen liquefaction efficiency, combining proven thermodynamic cycles with innovative engineering solutions.</p>
-    </div>
-    <div class="key-features">
-      <div class="feature">
-        <i class="fas fa-bolt"></i>
-        <span>High Efficiency Design</span>
-      </div>
-      <div class="feature">
-        <i class="fas fa-cogs"></i>
-        <span>Proven Components</span>
-      </div>
-      <div class="feature">
-        <i class="fas fa-leaf"></i>
-        <span>Energy Saving</span>
-      </div>
-    </div>
-  </div>
-</section>
-  <section class="process-stage" data-aos="fade-up">
-  <div class="stage-container">
-    <div class="stage-header">
-      <div class="stage-number">1</div>
-      <h2>Nitrogen Refrigeration Cycle</h2>
-    </div>
-    
-    <div class="stage-content">
-      <div class="stage-features">
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text"><strong>First stage uses a closed-loop nitrogen refrigeration cycle</strong></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text">Proven Reverse-Brayton thermodynamic refrigeration cycle with twin turbo-expanders for high efficiency</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text">Demonstrated plate-fin heat exchanger technology for efficient cooling</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text">Well-established refrigerant compressor technology</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text">Water-cooling for final heat rejection keeps efficiency high</div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <div class="feature-text">Actual efficiency depends on heat sink for ambient cooling:
-            <div class="sub-feature">
-              <span class="sub-icon">→</span>
-              <span>Alternate utilization of free cold energy from LNG / LN2 vaporization in LNG regasification terminal and Air Separation Units reduces CAPEX and OPEX significantly by 30%</span>
+    <section class="process-stage professional-stage" data-aos="fade-up">
+        <div class="stage-container">
+            <div class="stage-header professional-header">
+                <div class="stage-number professional-number">1</div>
+                <div class="header-content">
+                    <h2>Nitrogen-Based Closed-Loop Refrigeration</h2>
+                    <p class="stage-subtitle">High-efficiency precooling cycle using proven Reverse-Brayton technology</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="stage-visual">
-        <img src="assets/img/otherimages/stage1.png" alt="Stage 1 Diagram" class="stage-image" data-aos="zoom-in" />
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="process-stage" data-aos="fade-up">
+            <div class="stage-content professional-content">
+                <div class="stage-visual professional-visual">
+                    <figure class="text-center">
+                        <img src="assets/img/otherimages/stage1.png" alt="Nitrogen refrigeration cycle diagram" class="stage-image professional-image" data-aos="zoom-in" />
+                        <figcaption class="image-caption mt-2">Fig. 1: Two-stage nitrogen refrigeration cycle schematic</figcaption>
+                    </figure>
+                </div>
+
+                <div class="stage-features professional-features">
+                    <div class="feature-section">
+                        <h3 class="feature-section-title">
+                            <i class="fas fa-cogs feature-icon"></i>
+                            Highly Efficient Design with Proven Engineering
+                        </h3>
+                        <div class="stage-intro">
+                            <p>Our liquefaction process begins with a closed-loop nitrogen refrigeration cycle, built on the robust and reliable Reverse-Brayton thermodynamic cycle.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Utilizes twin turbo-expanders for maximum efficiency and thermal performance</div>
+                            </li>
+                            <!-- <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Backed by demonstrated plate-fin heat exchanger technology for rapid, energy-efficient cooling</div>
+                            </li>
+                            <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Integrates established refrigerant compressor systems, ensuring long-term operational reliability</div>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="feature-section">
+                        <h3 class="feature-section-title">
+                            <i class="fas fa-tint feature-icon"></i>
+                            Enhanced Heat Rejection with Water-Cooling
+                        </h3>
+                        <div class="stage-intro">
+                            <p>To maintain high system efficiency, we deploy water-based cooling for final heat rejection, which:</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Optimizes performance by leveraging ambient cooling</div>
+                            </li>
+                            <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Adapts to local environmental conditions for site-specific efficiency gains</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-section">
+                        <h3 class="feature-section-title">
+                            <i class="fas fa-snowflake feature-icon"></i>
+                            Cold Energy Integration for Cost Reduction
+                        </h3>
+                        <div class="stage-intro">
+                            <p>Our system design supports integrated cold energy recovery, enabling significant CAPEX and OPEX savings:</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Leverages free cold energy from LNG or LN₂ vaporization in LNG regasification terminals</div>
+                            </li>
+                            <!-- <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">Utilizes cold energy from Air Separation Units (ASUs) for enhanced efficiency</div>
+                            </li> -->
+                            <!-- <li class="feature-item professional-item">
+                                <div class="feature-marker"></div>
+                                <div class="feature-text">This approach reduces overall energy consumption and infrastructure costs by up to 30%</div>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="performance-highlight">
+                        <div class="performance-card">
+                            <div class="performance-value">30%</div>
+                            <div class="performance-label">CAPEX/OPEX Reduction</div>
+                        </div>
+                        <div class="performance-card">
+                            <div class="performance-value">6 kWh/kg</div>
+                            <div class="performance-label">Specific Energy Consumption</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standalone Why It Matters Section -->
+    <section class="why-it-matters-standalone">
+        <div class="container">
+            <div class="why-it-matters-content">
+                <h2 class="why-it-matters-title">
+                    <i class="fas fa-lightbulb"></i>
+                    Why It Matters
+                </h2>
+                <p class="why-it-matters-subtitle">Transforming industrial refrigeration with breakthrough efficiency and reliability</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Environmental Impact</h3>
+                        <p>Lower energy consumption and emissions through intelligent design</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>System Reliability</h3>
+                        <p>Greater system reliability using proven, field-tested components</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Financial Returns</h3>
+                        <p>Faster ROI with reduced capital and operational expenses</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Easy Integration</h3>
+                        <p>Seamless integration into existing industrial infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- <section class="process-stage" data-aos="fade-up">
   <div class="stage-container">
     <div class="stage-header">
       <div class="stage-number">2</div>
@@ -980,7 +1416,154 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="process-stage professional-stage" data-aos="fade-up">
+  <div class="stage-container">
+    <div class="stage-header professional-header">
+      <div class="stage-number professional-number">2</div>
+      <div class="header-content">
+        <h2>Advanced Hydrogen Refrigeration Cycle</h2>
+        <p class="stage-subtitle">High-efficiency second stage using a closed-loop hydrogen system</p>
+      </div>
+    </div>
+
+    <div class="stage-content professional-content">
+      <div class="stage-visual professional-visual">
+        <figure class="text-center">
+          <img src="assets/img/otherimages/stage2.png" alt="Hydrogen refrigeration cycle diagram" class="stage-image professional-image" data-aos="zoom-in" />
+          <figcaption class="image-caption mt-2">Fig. 2: Closed-loop hydrogen refrigeration cycle</figcaption>
+        </figure>
+      </div>
+
+      <div class="stage-features professional-features">
+        <div class="feature-section">
+          <h3 class="feature-section-title">
+            <i class="fas fa-cogs feature-icon"></i>
+            Proven Thermodynamic Design
+          </h3>
+          <!-- <div class="stage-intro">
+            <p>JTurbo’s second-stage liquefaction system is built on a closed-loop hydrogen refrigeration cycle, engineered for exceptional efficiency and adaptability.</p>
+          </div> -->
+          <ul class="feature-list">
+            <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Utilizes the Reverse-Brayton thermodynamic refrigeration cycle, widely trusted for high-efficiency cryogenic applications</div>
+            </li>
+            <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Features multiple turbo-expanders for optimized energy recovery and cooling power</div>
+            </li>
+            <!-- <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Engineered to maintain high performance across a range of operating conditions</div>
+            </li> -->
+          </ul>
+        </div>
+
+        <div class="feature-section">
+          <h3 class="feature-section-title">
+            <i class="fas fa-snowflake feature-icon"></i>
+            Refrigerant Flexibility with No Compromise
+          </h3>
+          <div class="stage-intro">
+            <p>Supports alternate refrigerants such as Helium (He) or Hydrogen–Neon (H₂–Ne) blends</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Offers customization for specific project needs without sacrificing thermodynamic efficiency</div>
+            </li>
+            <!-- <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Enables deployment across diverse ambient environments and geographies</div>
+            </li> -->
+          </ul>
+        </div>
+
+        <div class="feature-section">
+          <h3 class="feature-section-title">
+            <i class="fas fa-thermometer-half feature-icon"></i>
+            High-Efficiency Cooling Technology
+          </h3>
+          <div class="stage-intro">
+            <p>Integrates demonstrated plate-fin heat exchangers for compact, high-performance thermal exchange</p>
+          </div>
+          <ul class="feature-list">
+            <!-- <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Utilizes well-established compressor technologies from trusted global vendors</div>
+            </li>
+            <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">Ensures long-term reliability, ease of maintenance, and high operational uptime</div>
+            </li> -->
+          </ul>
+        </div>
+
+        <div class="feature-section">
+          <h3 class="feature-section-title">
+            <i class="fas fa-tint feature-icon"></i>
+            Water-Cooled Final Heat Rejection
+          </h3>
+          <div class="stage-intro">
+            <p>Employs water-based cooling at the final heat rejection stage to maintain peak efficiency</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-item professional-item">
+              <div class="feature-marker"></div>
+              <div class="feature-text">System efficiency is adaptable based on ambient heat sink conditions</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="why-it-matters-standalone">
+  <div class="container">
+    <div class="why-it-matters-content">
+      <h2 class="why-it-matters-title">
+        <i class="fas fa-lightbulb"></i>
+        Why It Matters
+      </h2>
+      <p class="why-it-matters-subtitle">The second stage of JTurbo’s liquefaction architecture brings:</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Exceptional Energy Efficiency</h3>
+          <p>Flexible refrigerant options with optimized performance</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-puzzle-piece"></i>
+          </div>
+          <h3>Easy Integration</h3>
+          <p>Seamless integration with various industrial setups</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Reliable Components</h3>
+          <p>Field-tested equipment ensures performance and uptime</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-thermometer-full"></i>
+          </div>
+          <h3>Optimized Thermal Efficiency</h3>
+          <p>Scalable and sustainable for hydrogen infrastructure</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Download Section -->
   <section class="download-section" data-aos="fade-up">
